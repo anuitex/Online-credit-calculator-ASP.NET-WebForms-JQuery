@@ -1,0 +1,1 @@
+sass --watch Content/scss/style.scss:Content/css/style.css

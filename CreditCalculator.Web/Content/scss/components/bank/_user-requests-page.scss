@@ -1,0 +1,213 @@
+﻿
+.bank-admin-body {
+    form {
+        margin-bottom: 0 !important;
+
+        .bank-admin-content-wrapper {
+            overflow-y: scroll;
+
+            .bank-body-content {
+                .bahk-user-requests-wrapper {
+                    margin-top: 80px;
+                    padding: 1px 100px 20px 100px;
+                    background-color: rgba(255,255,255,0.7);
+                    box-shadow: 0 2px 2px 0 rgba(0,0,0,.14), 0 3px 1px -2px rgba(0,0,0,.2), 0 1px 5px 0 rgba(0,0,0,.12);
+
+                    .user-credit-requests-title-wrapper, .user-deposit-requests-title-wrapper {
+                        margin-bottom: 20px;
+                        margin-top: 20px;
+
+                        .user-credit-requests-title-text, .user-deposit-requests-title-text {
+                            font-size: 24px;
+                            display: flex;
+                            justify-content: center;
+                        }
+                    }
+
+                    .bahk-user-requests-table-wrapper {
+                        -webkit-box-shadow: 0px 0px 10px 5px rgba(129,230,205,1);
+                        -moz-box-shadow: 0px 0px 10px 5px rgba(129,230,205,1);
+                        box-shadow: 0px 0px 10px 5px rgba(129,230,205,1);
+                        position: relative;
+                        padding: 10px 12px;
+
+                        .credit-table-filter, .deposit-table-filter {
+                            width: 100%;
+                            display: flex;
+                            justify-content: center;
+
+                            table {
+                                max-width: 74px;
+
+                                td {
+                                    font-size: 12px;
+                                    width: 50%;
+                                    padding: 0;
+
+                                    #creditFilterSpan, #depositFilterSpan {
+                                        select {
+                                            height: 30px;
+                                            background-color: #d1e9e7;
+
+                                            option {
+                                                font-size: 12px;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+
+                        select {
+                            display: block !important;
+                        }
+
+                        #bahk-user-credit-requests-table_wrapper, #bahk-user-deposit-requests-table_wrapper {
+                            .dataTables_length {
+                                label {
+                                    display: flex;
+                                    align-items: center;
+                                    select{
+                                        width:35px;
+                                        margin-left:5px;
+                                        margin-right:5px;
+                                    }
+                                }
+                            }
+
+                            #bahk-user-credit-requests-table_filter, #bahk-user-deposit-requests-table_filter {
+                                label {
+                                    font-size: 12px;
+                                }
+                            }
+
+                            #bahk-user-credit-requests-table_paginate, #bahk-user-deposit-requests-table_paginate {
+
+                                a {
+                                    font-size: 12px;
+                                }
+                            }
+
+                            .dataTables_info {
+                                font-size: 12px !important;
+                            }
+
+                            #bahk-user-credit-requests-table_length, #bahk-user-deposit-requests-table_length {
+                                label {
+                                    font-size: 12px;
+                                    color: #5a4c4c;
+
+                                    option {
+                                        font-size: 12px;
+                                    }
+                                }
+                            }
+
+                            th {
+                                font-size: 14px;
+                            }
+                        }
+
+                        #bahk-user-credit-requests-table, #bahk-user-deposit-requests-table {
+                            padding: 13px;
+                            font-size: 12px;
+
+                            tbody {
+
+                                tr.odd {
+                                    background-color: #cacaca;
+                                }
+
+                                tr {
+                                    height: 33px;
+
+                                    td {
+                                        font-size: 15px;
+                                    }
+
+                                    td.requests-table-user-id-column, td.deposits-requests-table-user-id-column {
+                                        .credit-requests-table-user-id-div, .deposits-requests-table-user-id-div {
+                                            max-width: 100px;
+                                            overflow: hidden;
+                                            text-overflow: ellipsis;
+                                            white-space: nowrap;
+                                        }
+                                    }
+
+                                    .credit-requests-table-action-buttons, .deposit-requests-table-action-buttons {
+                                        min-width: 155px;
+                                        text-align: center;
+
+                                        i {
+                                            padding: 0;
+                                            height: unset;
+                                            margin-bottom: unset;
+                                        }
+
+                                        input {
+                                            background: #5dd4c9;
+                                            padding-top: 4px;
+                                            padding-right: 5px;
+                                            padding-left: 5px;
+                                            height: 27px;
+                                            font-size: 14px;
+                                            color: white;
+                                            border-radius: 3px;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+#declineRequestModal {
+    background: transparent;
+    box-shadow: unset !important;
+
+    .modal-dialog {
+        .modal-content {
+            max-width: 500px;
+
+            .modal-footer {
+                button {
+                    margin: 0;
+                }
+            }
+        }
+    }
+}
+
+table.dataTable tbody th, table.dataTable tbody td {
+    padding: 0 10px !important;
+}
+
+div.dataTables_wrapper div.dataTables_length select {
+    height:30px;
+    background-color: #d1e9e7 !important;
+    font-size: 12px;
+    color: black;
+}
+
+
+.bank-admin-body form .bahk-user-requests-wrapper #bahk-user-credit-requests-table tbody
+tr td, .bank-admin-body form .bahk-user-requests-wrapper
+#bahk-user-deposit-requests-table tbody tr td {
+    border: none !important;
+}
+
+table.dataTable thead .sorting, table.dataTable thead .sorting_asc, table.dataTable thead .sorting_desc {
+    background-image: none !important;
+}
+
+///Media
+
+@media screen and (max-width:1138px) {
+    .bank-body-content {
+        overflow-y: scroll;
+    }
+}

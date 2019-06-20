@@ -1,0 +1,184 @@
+﻿.user-body {
+    background: rgb(124,126,167);
+    background: linear-gradient(0deg, rgba(124,126,167,1) 0%, rgba(255,255,255,1) 100%);
+
+    form {
+        .navbar.navbar-inverse.navbar-fixed-top {
+            background: #7c7ea7;
+
+            .container.user-top-menu-container {
+                width: 1140px;
+                margin-left: 54px;
+                margin-right: 54px;
+                max-width: 1140px;
+
+                .navbar-collapse.collapse {
+                    margin-left: 54px;
+                    margin-right: 54px;
+                }
+            }
+        }
+
+        .user-body-content {
+            width: 1170px !important;
+
+            .user-body-content-wrapper {
+                position: relative;
+                margin-top: 52px;
+                background-color: rgba(255, 255, 255, 0.3);
+                padding: 0 50px 20px 50px;
+
+                .available-banks-main-title-wrapper {
+                    display: flex;
+                    justify-content: center;
+
+                    .available-banks-title-wrapper {
+                        position: absolute;
+                        display: flex;
+                        justify-content: center;
+                        width: 70%;
+                        box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+                        background: #e8e8f0;
+                        border-radius: 4px;
+                        height: 39px;
+                        align-items: center;
+                        top: 18px;
+
+                        .available-banks-title-text {
+                            margin: 16px 0;
+                            font-size: 24px;
+                        }
+                    }
+                }
+
+                .history-credit-request-wrapper {
+                    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+                    padding: 10px 20px;
+                    margin-top: 40px;
+
+                    .user-deposit-requests-filter-wrapper {
+                        display: flex;
+                        justify-content: center;
+                        margin-top: 30px;
+
+                        .user-available-banks-table-filter {
+                            width: 100px;
+                            height: 45px;
+
+                            table {
+                                tbody {
+                                    tr {
+                                        td {
+                                            padding: 0;
+
+                                            span {
+                                                select {
+                                                    height: 30px;
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+
+                    #user-available-banks-table_wrapper {
+                        margin-top: 30px;
+
+                        .dataTables_length {
+
+                            label {
+                                display: flex;
+                                align-items: center;
+                                color: black;
+                                font-size: unset !important;
+
+                                select {
+                                    height: 30px;
+                                    margin-left: 5px;
+                                    margin-right: 5px;
+                                    background-color: white !important;
+                                }
+                            }
+                        }
+
+                        #user-available-banks-table_filter {
+                            label {
+                                display: flex;
+                                align-items: center;
+                                color: black;
+                                font-size: unset !important;
+
+                                input {
+                                    margin-left: 10px;
+                                }
+                            }
+                        }
+
+                        .dataTables_scroll {
+                            .dataTables_scrollHead {
+                                display: flex;
+                                justify-content: center;
+
+                                .dataTables_scrollHeadInner {
+                                    .available-banks-table {
+                                        padding: unset !important;
+                                        margin-left: unset !important;
+
+                                        thead {
+                                            tr {
+                                                th {
+                                                    border: none;
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+
+                            .dataTables_scrollBody {
+                                #user-available-banks-table {
+                                    tbody {
+                                        tr {
+                                            height: 40px;
+
+                                            td {
+                                                border: none !important;
+                                            }
+                                        }
+
+                                        tr.odd {
+                                            background-color: #d8d7da !important;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+
+                        .dataTables_paginate {
+                            a {
+                                color: black !important;
+                            }
+
+                            a:hover {
+                                /*background-color:green !important;*/
+                            }
+                        }
+                    }
+                }
+
+                .available-banks-table {
+                    tbody {
+                        .available-banks-bank-name {
+                            a {
+                                cursor: pointer;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

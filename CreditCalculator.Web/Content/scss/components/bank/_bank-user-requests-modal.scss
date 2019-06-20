@@ -1,0 +1,41 @@
+﻿#declineRequestModal {
+    max-width: 500px;
+
+    .modal-content-wrapper {
+        .modal-content {
+            border-top-left-radius: 12px;
+            border-top-right-radius: 12px;
+
+            .modal-title-wrapper {
+                display: flex;
+                justify-content: center;
+
+                .modal-title-text {
+                    font-size: 16px;
+                }
+            }
+
+            #BankContent_declineRequestDescription {
+                max-width: unset;
+            }
+        }
+
+        .modal-footer {
+            display: flex;
+            justify-content: space-around;
+            border-bottom-left-radius: 12px;
+            border-bottom-right-radius: 12px;
+
+            button {
+                height: 27px;
+                background: #5dd4c9;
+                font-size: 14px;
+                color: white;
+                margin-bottom: 0;
+                border-radius: 3px;
+                display: flex;
+                align-items: baseline;
+            }
+        }
+    }
+}

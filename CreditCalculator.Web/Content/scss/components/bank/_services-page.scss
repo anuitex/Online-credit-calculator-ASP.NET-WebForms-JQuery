@@ -1,0 +1,227 @@
+﻿.bank-admin-body {
+    form {
+        .bank-admin-content-wrapper {
+
+            .bank-body-content {
+                .bank-services-main-wrapper {
+                    .bank-add-new-service-wrapper {
+                    }
+
+                    .bank-services-content-wrapper {
+
+                        .hidden-field {
+                            display: none;
+                        }
+
+                        .bank-services-wrapper {
+                            background-color: rgba(255, 255, 255, 0.7);
+                            box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+                            margin-top: 80px;
+                            padding: 20px 0;
+
+                            .bank-services-title-wrapper {
+                                display: flex;
+                                justify-content: center;
+
+                                .bank-services-title-text {
+                                    font-size: 24px;
+                                    margin-bottom: 20px;
+                                }
+                            }
+
+                            .bank-services-menu-elements-wrapper {
+                                padding: 0 12px;
+                                width: 81%;
+                                margin: 0 auto;
+                                box-shadow: 0px 0px 10px 5px #81e6cd;
+
+                                .service-title-wrapper {
+
+                                    .service-title-text {
+                                        font-size: 26px;
+                                        display: flex;
+                                        justify-content: center;
+                                    }
+
+                                    button {
+                                        position: absolute;
+                                        background: #5dd4c9;
+                                        padding: 4px 6px 4px 6px;
+                                        height: 26px;
+                                        font-size: 14px;
+                                        color: white;
+                                        border-radius: 3px;
+                                    }
+                                }
+
+                                .wrapper {
+                                    display: flex;
+                                    justify-content: space-around;
+
+                                    .toggle.toggle--active {
+                                        padding: 0;
+
+                                        ul {
+                                            display: flex;
+
+                                            li {
+                                                height: 40px;
+                                                width: 120px;
+                                                float: left;
+
+                                                a {
+                                                    background-color: rgba(174, 242, 229, 0.5);
+                                                    height: 100%;
+                                                    width: 100%;
+                                                    display: flex;
+                                                    justify-content: center;
+                                                    align-items: center;
+                                                    border-radius: 4px;
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+
+                            .credit-propositions-table-wrapper, .deposit-propositions-table-wrapper {
+                                margin-top: 10px;
+
+                                .dataTables_scrollHead {
+                                    display: flex;
+                                    justify-content: center;
+
+                                    .dataTables_scrollHeadInner {
+                                        table {
+                                            thead {
+                                                tr {
+                                                    th {
+                                                        font-size: 14px;
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+
+                                .dataTables_scrollBody {
+                                    #credit-propositions-table, #deposit-propositions-table {
+                                        padding: 13px;
+
+                                        thead {
+                                            tr {
+                                                th {
+                                                    font-size: 14px;
+                                                }
+                                            }
+                                        }
+
+                                        tbody {
+                                            tr.odd {
+                                                background-color: #cacaca;
+                                            }
+
+                                            tr {
+                                                height: 44px;
+
+                                                td.credit-propositions-table-action-buttons, td.deposit-propositions-table-action-buttons {
+                                                    display: flex;
+                                                    align-items: center;
+                                                    height: 44px;
+
+                                                    button.delete {
+                                                        margin-left: 5px;
+                                                    }
+                                                }
+
+                                                td {
+                                                    font-size: 15px;
+                                                    border: none !important;
+                                                    text-align: center;
+                                                }
+                                            }
+
+                                            td.credit-propositions-table-action-buttons, td.deposit-propositions-table-action-buttons {
+                                                button {
+                                                    background: #5dd4c9;
+                                                    padding: 4px 6px 4px 6px;
+                                                    height: 26px;
+                                                    font-size: 14px;
+                                                    color: white;
+                                                    border-radius: 3px;
+                                                    border: none;
+                                                    margin-bottom: 0;
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+///Service menu
+.bank-services-content-wrapper {
+
+    .toggle {
+        opacity: 1;
+        -webkit-transition: ease-in 0.5s all;
+        transition: ease-in 0.5s all;
+        -webkit-transform: translateY(0);
+        -ms-transform: translateY(0);
+        transform: translateY(0);
+        padding: 0 !important;
+    }
+
+    .toggle--active {
+        display: block;
+        opacity: 1;
+        -webkit-transition: ease-in 0.5s all;
+        transition: ease-in 0.5s all;
+        -webkit-transform: translateY(0);
+        -ms-transform: translateY(0);
+        transform: translateY(0);
+    }
+
+    .toggle-menu {
+        margin-bottom: 0;
+    }
+
+    .toggle-menu li {
+        display: block;
+    }
+
+    .toggle-menu li a {
+        text-decoration: none;
+        color: #000;
+        display: block;
+        text-align: center;
+        font-size: 17px;
+        text-transform: uppercase;
+        border: 2px solid transparent;
+        -webkit-transition: linear 0.5s all;
+        transition: linear 0.5s all;
+        font-weight: 500;
+        padding: 5px 0;
+    }
+
+    .toggle-menu li a span {
+        text-transform: lowercase;
+    }
+
+    .toggle-menu li a:hover {
+        color: #db5523;
+        border: 2px solid #db5523;
+        -webkit-transition: linear 0.5s all;
+        transition: linear 0.5s all;
+        -webkit-transform: scale(1.15);
+        -ms-transform: scale(1.15);
+        transform: scale(1.15);
+        font-weight: 700;
+    }
+}

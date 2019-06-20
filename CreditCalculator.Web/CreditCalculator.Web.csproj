@@ -1,0 +1,968 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{2789DF18-DAFA-40DC-8763-0644F11EB3D4}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CreditCalculator.Web</RootNamespace>
+    <AssemblyName>CreditCalculator.Web</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AutoMapper, Version=7.0.1.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.7\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.7\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="AspNet.ScriptManager.bootstrap">
+      <HintPath>..\packages\AspNet.ScriptManager.bootstrap.3.3.7\lib\net45\AspNet.ScriptManager.bootstrap.dll</HintPath>
+    </Reference>
+    <Reference Include="AspNet.ScriptManager.jQuery">
+      <HintPath>..\packages\AspNet.ScriptManager.jQuery.3.3.1\lib\net45\AspNet.ScriptManager.jQuery.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ScriptManager.MSAjax">
+      <HintPath>..\packages\Microsoft.AspNet.ScriptManager.MSAjax.5.0.0\lib\net45\Microsoft.ScriptManager.MSAjax.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ScriptManager.WebForms">
+      <HintPath>..\packages\Microsoft.AspNet.ScriptManager.WebForms.5.0.0\lib\net45\Microsoft.ScriptManager.WebForms.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization, Version=1.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.11.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Web.Optimization.WebForms">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.WebForms.1.1.3\lib\net45\Microsoft.AspNet.Web.Optimization.WebForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.FriendlyUrls">
+      <HintPath>..\packages\Microsoft.AspNet.FriendlyUrls.Core.1.0.2\lib\net45\Microsoft.AspNet.FriendlyUrls.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Core">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.2.2\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Owin">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Owin.2.2.2\lib\net45\Microsoft.AspNet.Identity.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.EntityFramework">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.EntityFramework.2.2.2\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Providers">
+      <HintPath>..\packages\Microsoft.AspNet.Providers.Core.2.0.0\lib\net40\System.Web.Providers.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin">
+      <HintPath>..\packages\Microsoft.Owin.3.1.0\lib\net45\Microsoft.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Host.SystemWeb">
+      <HintPath>..\packages\Microsoft.Owin.Host.SystemWeb.3.1.0\lib\net45\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security">
+      <HintPath>..\packages\Microsoft.Owin.Security.3.1.0\lib\net45\Microsoft.Owin.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Facebook">
+      <HintPath>..\packages\Microsoft.Owin.Security.Facebook.3.1.0\lib\net45\Microsoft.Owin.Security.Facebook.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Cookies">
+      <HintPath>..\packages\Microsoft.Owin.Security.Cookies.3.1.0\lib\net45\Microsoft.Owin.Security.Cookies.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Google">
+      <HintPath>..\packages\Microsoft.Owin.Security.Google.3.1.0\lib\net45\Microsoft.Owin.Security.Google.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Twitter">
+      <HintPath>..\packages\Microsoft.Owin.Security.Twitter.3.1.0\lib\net45\Microsoft.Owin.Security.Twitter.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.MicrosoftAccount">
+      <HintPath>..\packages\Microsoft.Owin.Security.MicrosoftAccount.3.1.0\lib\net45\Microsoft.Owin.Security.MicrosoftAccount.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.OAuth">
+      <HintPath>..\packages\Microsoft.Owin.Security.OAuth.3.1.0\lib\net45\Microsoft.Owin.Security.OAuth.dll</HintPath>
+    </Reference>
+    <Reference Include="Owin">
+      <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Diagnostics.DiagnosticSource">
+      <HintPath>..\packages\System.Diagnostics.DiagnosticSource.4.4.1\lib\net45\System.Diagnostics.DiagnosticSource.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.TelemetryCorrelation">
+      <HintPath>..\packages\Microsoft.AspNet.TelemetryCorrelation.1.0.0\lib\net45\Microsoft.AspNet.TelemetryCorrelation.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="About.aspx" />
+    <Content Include="Account\AddPhoneNumber.aspx" />
+    <Content Include="Account\Confirm.aspx" />
+    <Content Include="Account\Forgot.aspx" />
+    <Content Include="Account\Lockout.aspx" />
+    <Content Include="Account\Login.aspx" />
+    <Content Include="Account\ManageLogins.aspx" />
+    <Content Include="Account\ManagePassword.aspx" />
+    <Content Include="Account\OpenAuthProviders.ascx" />
+    <Content Include="Account\Register.aspx" />
+    <Content Include="Account\RegisterExternalLogin.aspx" />
+    <Content Include="Account\ResetPassword.aspx" />
+    <Content Include="Account\ResetPasswordConfirmation.aspx" />
+    <Content Include="Account\TwoFactorAuthenticationSignIn.aspx" />
+    <Content Include="Account\VerifyPhoneNumber.aspx" />
+    <Content Include="App_Data\aspnet-CreditCalculator.Web-20190514020720.mdf" />
+    <Content Include="App_Data\aspnet-CreditCalculator.Web-20190514020720_log.ldf">
+      <DependentUpon>aspnet-CreditCalculator.Web-20190514020720.mdf</DependentUpon>
+    </Content>
+    <Content Include="Areas\Admin\Bank.aspx" />
+    <Content Include="Areas\Admin\Home.aspx" />
+    <Content Include="Areas\Admin\User.aspx" />
+    <Content Include="Areas\Bank\Home.aspx" />
+    <Content Include="Areas\Bank\Request.aspx" />
+    <Content Include="Areas\Bank\Services.aspx" />
+    <Content Include="Areas\User\AvailableBanks.aspx" />
+    <Content Include="Areas\User\Bank.aspx" />
+    <Content Include="Areas\User\BankServices.aspx" />
+    <Content Include="Areas\User\CreditRequest.aspx" />
+    <Content Include="Areas\User\DepositRequest.aspx" />
+    <Content Include="Areas\User\Home.aspx" />
+    <Content Include="Bank.Master" />
+    <Content Include="Content\css\bootstrap\bootstrap-grid.min.css" />
+    <Content Include="Content\css\bootstrap\bootstrap-reboot.min.css" />
+    <Content Include="Content\css\bootstrap\bootstrap.min.css" />
+    <Content Include="Content\css\calendario\calendar.css" />
+    <Content Include="Content\css\calendario\custom_1.css" />
+    <Content Include="Content\css\calendario\demo.css" />
+    <Content Include="Content\css\DataTables\dataTables.bootstrap.css" />
+    <Content Include="Content\css\DataTables\dataTables.bootstrap.min.css" />
+    <Content Include="Content\css\DataTables\dataTables.bootstrap4.css" />
+    <Content Include="Content\css\DataTables\dataTables.bootstrap4.min.css" />
+    <Content Include="Content\css\DataTables\dataTables.foundation.css" />
+    <Content Include="Content\css\DataTables\dataTables.foundation.min.css" />
+    <Content Include="Content\css\DataTables\dataTables.jqueryui.css" />
+    <Content Include="Content\css\DataTables\dataTables.jqueryui.min.css" />
+    <Content Include="Content\css\DataTables\dataTables.semanticui.css" />
+    <Content Include="Content\css\DataTables\dataTables.semanticui.min.css" />
+    <Content Include="Content\css\DataTables\jquery.dataTables.css" />
+    <Content Include="Content\css\DataTables\jquery.dataTables.min.css" />
+    <Content Include="Content\css\images\sort_asc.png" />
+    <Content Include="Content\css\images\sort_asc_disabled.png" />
+    <Content Include="Content\css\images\sort_both.png" />
+    <Content Include="Content\css\images\sort_desc.png" />
+    <Content Include="Content\css\images\sort_desc_disabled.png" />
+    <Content Include="Content\css\materialBootstrap\bootstrap-material-design.min.css" />
+    <Content Include="Content\images\Admin\leftMenuBackground\nature.jpg" />
+    <Content Include="Content\images\Application\background\home-page.jpg" />
+    <Content Include="Content\images\background\bank-admin\city.jpg" />
+    <Content Include="Content\images\background\Dark-Grey-Texture-Wallpaper-5.jpg" />
+    <Content Include="Content\images\bank-1\main-logo\small-logo.png" />
+    <Content Include="Content\images\bank-2\main-logo\small-logo.jpg" />
+    <Content Include="Content\images\bank-3\main-logo\small-logo.png" />
+    <Content Include="Content\images\sort_asc.png" />
+    <Content Include="Content\images\sort_asc_disabled.png" />
+    <Content Include="Content\images\sort_both.png" />
+    <Content Include="Content\images\sort_desc.png" />
+    <Content Include="Content\images\sort_desc_disabled.png" />
+    <Content Include="Content\scss\components\bank\_user-requests-page.scss" />
+    <Content Include="Content\scss\base\_main.scss" />
+    <Content Include="Admin.Master" />
+    <Content Include="Content\scss\components\admin\_left-side-menu.scss" />
+    <Content Include="Content\css\bootstrap\bootstrap-grid.min.css.map" />
+    <Content Include="Content\css\bootstrap\bootstrap-reboot.min.css.map" />
+    <Content Include="Content\css\bootstrap\bootstrap.min.css.map" />
+    <Content Include="Admin.Mobile.Master" />
+    <Content Include="Content\scss\components\admin\_home-page.scss" />
+    <Content Include="Content\scss\components\admin\_banks-page.scss" />
+    <Content Include="Content\scss\components\admin\_users-page.scss" />
+    <Content Include="Content\scss\components\admin\_users-page-add-new-user-modal.scss" />
+    <Content Include="Content\scss\components\user\_bank-page.scss" />
+    <Content Include="Content\scss\components\user\_bank-services-page.scss" />
+    <Content Include="Content\scss\components\user\_credit-calculator.scss" />
+    <Content Include="Content\scss\components\user\_deposit-calculator.scss" />
+    <Content Include="Content\scss\components\admin\_banks-page-add-new-bank-modal.scss" />
+    <Content Include="Content\scss\components\user\_home-page-tables.scss" />
+    <Content Include="Content\scss\components\user\_user-banks-top-menu.scss" />
+    <Content Include="Content\scss\components\bank\_main-menu.scss" />
+    <Content Include="Content\scss\components\user\_top-menu.scss" />
+    <Content Include="Content\scss\components\index\_index-animation.scss" />
+    <Content Include="Content\scss\components\index\_index-page.scss" />
+    <Content Include="Content\scss\components\admin\_common.scss" />
+    <Content Include="package-lock.json" />
+    <Content Include="Content\scss\components\bank\_bank-user-requests-modal.scss" />
+    <Content Include="Content\scss\components\bank\_edit-proposition-modal.scss" />
+    <Content Include="Content\scss\components\index\_login.scss" />
+    <Content Include="Content\scss\components\index\_register.scss" />
+    <Content Include="Content\scss\components\bank\_add-proposition-modal.scss" />
+    <Content Include="Content\scss\components\bank\_delete-proposition-modal.scss" />
+    <Content Include="Content\scss\components\admin\_edit-bank-modal.scss" />
+    <Content Include="Content\scss\components\admin\_edit-user-modal.scss" />
+    <None Include="Scripts\jquery-3.3.1.intellisense.js" />
+    <None Include="UserAvailableBank.Master" />
+    <Content Include="Contact.aspx" />
+    <Content Include="Content\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap-theme.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\css\font-awesome\all.min.css" />
+    <Content Include="Content\css\font-awesome\brands.min.css" />
+    <Content Include="Content\css\font-awesome\fontawesome.min.css" />
+    <Content Include="Content\css\font-awesome\regular.min.css" />
+    <Content Include="Content\css\font-awesome\solid.min.css" />
+    <Content Include="Content\css\font-awesome\svg-with-js.min.css" />
+    <Content Include="Content\css\font-awesome\v4-shims.min.css" />
+    <Content Include="Content\css\style.css" />
+    <Content Include="Content\css\Site.css" />
+    <Content Include="Content\css\webfonts\fa-brands-400.svg" />
+    <Content Include="Content\css\webfonts\fa-regular-400.svg" />
+    <Content Include="Content\css\webfonts\fa-solid-900.svg" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Default.aspx" />
+    <Content Include="favicon.ico" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Account\Web.config" />
+    <Content Include="Content\scss\style.scss" />
+    <Content Include="Content\scss\base\_reset.scss" />
+    <Content Include="Content\scss\components\_badges.scss" />
+    <Content Include="Content\scss\components\_buttons.scss" />
+    <Content Include="Content\scss\components\_cards.scss" />
+    <Content Include="Content\scss\components\_carousel.scss" />
+    <Content Include="Content\scss\components\_chips.scss" />
+    <Content Include="Content\scss\components\_collapsible.scss" />
+    <Content Include="Content\scss\components\_color-classes.scss" />
+    <Content Include="Content\scss\components\_color-variables.scss" />
+    <Content Include="Content\scss\components\_datepicker.scss" />
+    <Content Include="Content\scss\components\_dropdown.scss" />
+    <Content Include="Content\scss\components\_global.scss" />
+    <Content Include="Content\scss\components\_grid.scss" />
+    <Content Include="Content\scss\components\_icons-material-design.scss" />
+    <Content Include="Content\scss\components\_materialbox.scss" />
+    <Content Include="Content\scss\components\_modal.scss" />
+    <Content Include="Content\scss\components\_navbar.scss" />
+    <Content Include="Content\scss\components\_normalize.scss" />
+    <Content Include="Content\scss\components\_preloader.scss" />
+    <Content Include="Content\scss\components\_pulse.scss" />
+    <Content Include="Content\scss\components\_sidenav.scss" />
+    <Content Include="Content\scss\components\_slider.scss" />
+    <Content Include="Content\scss\components\_table_of_contents.scss" />
+    <Content Include="Content\scss\components\_tabs.scss" />
+    <Content Include="Content\scss\components\_tapTarget.scss" />
+    <Content Include="Content\scss\components\_timepicker.scss" />
+    <Content Include="Content\scss\components\_toast.scss" />
+    <Content Include="Content\scss\components\_tooltip.scss" />
+    <Content Include="Content\scss\components\_transitions.scss" />
+    <Content Include="Content\scss\components\_typography.scss" />
+    <Content Include="Content\scss\components\_variables.scss" />
+    <Content Include="Content\scss\components\_waves.scss" />
+    <Content Include="Content\scss\components\forms\_checkboxes.scss" />
+    <Content Include="Content\scss\components\forms\_file-input.scss" />
+    <Content Include="Content\scss\components\forms\_forms.scss" />
+    <Content Include="Content\scss\components\forms\_input-fields.scss" />
+    <Content Include="Content\scss\components\forms\_radio-buttons.scss" />
+    <Content Include="Content\scss\components\forms\_range.scss" />
+    <Content Include="Content\scss\components\forms\_select.scss" />
+    <Content Include="Content\scss\components\forms\_switches.scss" />
+    <Content Include="Content\scss\vendors\materialize\components\forms\_checkboxes.scss" />
+    <Content Include="Content\scss\vendors\materialize\components\forms\_file-input.scss" />
+    <Content Include="Content\scss\vendors\materialize\components\forms\_forms.scss" />
+    <Content Include="Content\scss\vendors\materialize\components\forms\_input-fields.scss" />
+    <Content Include="Content\scss\vendors\materialize\components\forms\_radio-buttons.scss" />
+    <Content Include="Content\scss\vendors\materialize\components\forms\_range.scss" />
+    <Content Include="Content\scss\vendors\materialize\components\forms\_select.scss" />
+    <Content Include="Content\scss\vendors\materialize\components\forms\_switches.scss" />
+    <Content Include="Content\scss\vendors\materialize\components\_badges.scss" />
+    <Content Include="Content\scss\vendors\materialize\components\_buttons.scss" />
+    <Content Include="Content\scss\vendors\materialize\components\_cards.scss" />
+    <Content Include="Content\scss\vendors\materialize\components\_carousel.scss" />
+    <Content Include="Content\scss\vendors\materialize\components\_chips.scss" />
+    <Content Include="Content\scss\vendors\materialize\components\_collapsible.scss" />
+    <Content Include="Content\scss\vendors\materialize\components\_color-classes.scss" />
+    <Content Include="Content\scss\vendors\materialize\components\_color-variables.scss" />
+    <Content Include="Content\scss\vendors\materialize\components\_datepicker.scss" />
+    <Content Include="Content\scss\vendors\materialize\components\_dropdown.scss" />
+    <Content Include="Content\scss\vendors\materialize\components\_global.scss" />
+    <Content Include="Content\scss\vendors\materialize\components\_grid.scss" />
+    <Content Include="Content\scss\vendors\materialize\components\_icons-material-design.scss" />
+    <Content Include="Content\scss\vendors\materialize\components\_materialbox.scss" />
+    <Content Include="Content\scss\vendors\materialize\components\_modal.scss" />
+    <Content Include="Content\scss\vendors\materialize\components\_navbar.scss" />
+    <Content Include="Content\scss\vendors\materialize\components\_normalize.scss" />
+    <Content Include="Content\scss\vendors\materialize\components\_preloader.scss" />
+    <Content Include="Content\scss\vendors\materialize\components\_pulse.scss" />
+    <Content Include="Content\scss\vendors\materialize\components\_sidenav.scss" />
+    <Content Include="Content\scss\vendors\materialize\components\_slider.scss" />
+    <Content Include="Content\scss\vendors\materialize\components\_table_of_contents.scss" />
+    <Content Include="Content\scss\vendors\materialize\components\_tabs.scss" />
+    <Content Include="Content\scss\vendors\materialize\components\_tapTarget.scss" />
+    <Content Include="Content\scss\vendors\materialize\components\_timepicker.scss" />
+    <Content Include="Content\scss\vendors\materialize\components\_toast.scss" />
+    <Content Include="Content\scss\vendors\materialize\components\_tooltip.scss" />
+    <Content Include="Content\scss\vendors\materialize\components\_transitions.scss" />
+    <Content Include="Content\scss\vendors\materialize\components\_typography.scss" />
+    <Content Include="Content\scss\vendors\materialize\components\_variables.scss" />
+    <Content Include="Content\scss\vendors\materialize\components\_waves.scss" />
+    <Content Include="Content\scss\vendors\materialize\_materialize.scss" />
+    <Content Include="Content\scss\vendors\bootstrap\bootstrap-grid.scss" />
+    <Content Include="Content\scss\vendors\bootstrap\bootstrap-reboot.scss" />
+    <Content Include="Content\scss\vendors\bootstrap\bootstrap.scss" />
+    <Content Include="Content\scss\vendors\bootstrap\mixins\_alert.scss" />
+    <Content Include="Content\scss\vendors\bootstrap\mixins\_background-variant.scss" />
+    <Content Include="Content\scss\vendors\bootstrap\mixins\_badge.scss" />
+    <Content Include="Content\scss\vendors\bootstrap\mixins\_border-radius.scss" />
+    <Content Include="Content\scss\vendors\bootstrap\mixins\_box-shadow.scss" />
+    <Content Include="Content\scss\vendors\bootstrap\mixins\_breakpoints.scss" />
+    <Content Include="Content\scss\vendors\bootstrap\mixins\_buttons.scss" />
+    <Content Include="Content\scss\vendors\bootstrap\mixins\_caret.scss" />
+    <Content Include="Content\scss\vendors\bootstrap\mixins\_clearfix.scss" />
+    <Content Include="Content\scss\vendors\bootstrap\mixins\_float.scss" />
+    <Content Include="Content\scss\vendors\bootstrap\mixins\_forms.scss" />
+    <Content Include="Content\scss\vendors\bootstrap\mixins\_gradients.scss" />
+    <Content Include="Content\scss\vendors\bootstrap\mixins\_grid-framework.scss" />
+    <Content Include="Content\scss\vendors\bootstrap\mixins\_grid.scss" />
+    <Content Include="Content\scss\vendors\bootstrap\mixins\_hover.scss" />
+    <Content Include="Content\scss\vendors\bootstrap\mixins\_image.scss" />
+    <Content Include="Content\scss\vendors\bootstrap\mixins\_list-group.scss" />
+    <Content Include="Content\scss\vendors\bootstrap\mixins\_lists.scss" />
+    <Content Include="Content\scss\vendors\bootstrap\mixins\_nav-divider.scss" />
+    <Content Include="Content\scss\vendors\bootstrap\mixins\_pagination.scss" />
+    <Content Include="Content\scss\vendors\bootstrap\mixins\_reset-text.scss" />
+    <Content Include="Content\scss\vendors\bootstrap\mixins\_resize.scss" />
+    <Content Include="Content\scss\vendors\bootstrap\mixins\_screen-reader.scss" />
+    <Content Include="Content\scss\vendors\bootstrap\mixins\_size.scss" />
+    <Content Include="Content\scss\vendors\bootstrap\mixins\_table-row.scss" />
+    <Content Include="Content\scss\vendors\bootstrap\mixins\_text-emphasis.scss" />
+    <Content Include="Content\scss\vendors\bootstrap\mixins\_text-hide.scss" />
+    <Content Include="Content\scss\vendors\bootstrap\mixins\_text-truncate.scss" />
+    <Content Include="Content\scss\vendors\bootstrap\mixins\_transition.scss" />
+    <Content Include="Content\scss\vendors\bootstrap\mixins\_visibility.scss" />
+    <Content Include="Content\scss\vendors\bootstrap\utilities\_align.scss" />
+    <Content Include="Content\scss\vendors\bootstrap\utilities\_background.scss" />
+    <Content Include="Content\scss\vendors\bootstrap\utilities\_borders.scss" />
+    <Content Include="Content\scss\vendors\bootstrap\utilities\_clearfix.scss" />
+    <Content Include="Content\scss\vendors\bootstrap\utilities\_display.scss" />
+    <Content Include="Content\scss\vendors\bootstrap\utilities\_embed.scss" />
+    <Content Include="Content\scss\vendors\bootstrap\utilities\_flex.scss" />
+    <Content Include="Content\scss\vendors\bootstrap\utilities\_float.scss" />
+    <Content Include="Content\scss\vendors\bootstrap\utilities\_overflow.scss" />
+    <Content Include="Content\scss\vendors\bootstrap\utilities\_position.scss" />
+    <Content Include="Content\scss\vendors\bootstrap\utilities\_screenreaders.scss" />
+    <Content Include="Content\scss\vendors\bootstrap\utilities\_shadows.scss" />
+    <Content Include="Content\scss\vendors\bootstrap\utilities\_sizing.scss" />
+    <Content Include="Content\scss\vendors\bootstrap\utilities\_spacing.scss" />
+    <Content Include="Content\scss\vendors\bootstrap\utilities\_text.scss" />
+    <Content Include="Content\scss\vendors\bootstrap\utilities\_visibility.scss" />
+    <Content Include="Content\scss\vendors\bootstrap\_alert.scss" />
+    <Content Include="Content\scss\vendors\bootstrap\_badge.scss" />
+    <Content Include="Content\scss\vendors\bootstrap\_breadcrumb.scss" />
+    <Content Include="Content\scss\vendors\bootstrap\_button-group.scss" />
+    <Content Include="Content\scss\vendors\bootstrap\_buttons.scss" />
+    <Content Include="Content\scss\vendors\bootstrap\_card.scss" />
+    <Content Include="Content\scss\vendors\bootstrap\_carousel.scss" />
+    <Content Include="Content\scss\vendors\bootstrap\_close.scss" />
+    <Content Include="Content\scss\vendors\bootstrap\_code.scss" />
+    <Content Include="Content\scss\vendors\bootstrap\_custom-forms.scss" />
+    <Content Include="Content\scss\vendors\bootstrap\_dropdown.scss" />
+    <Content Include="Content\scss\vendors\bootstrap\_forms.scss" />
+    <Content Include="Content\scss\vendors\bootstrap\_functions.scss" />
+    <Content Include="Content\scss\vendors\bootstrap\_grid.scss" />
+    <Content Include="Content\scss\vendors\bootstrap\_images.scss" />
+    <Content Include="Content\scss\vendors\bootstrap\_input-group.scss" />
+    <Content Include="Content\scss\vendors\bootstrap\_jumbotron.scss" />
+    <Content Include="Content\scss\vendors\bootstrap\_list-group.scss" />
+    <Content Include="Content\scss\vendors\bootstrap\_media.scss" />
+    <Content Include="Content\scss\vendors\bootstrap\_mixins.scss" />
+    <Content Include="Content\scss\vendors\bootstrap\_modal.scss" />
+    <Content Include="Content\scss\vendors\bootstrap\_nav.scss" />
+    <Content Include="Content\scss\vendors\bootstrap\_navbar.scss" />
+    <Content Include="Content\scss\vendors\bootstrap\_pagination.scss" />
+    <Content Include="Content\scss\vendors\bootstrap\_popover.scss" />
+    <Content Include="Content\scss\vendors\bootstrap\_print.scss" />
+    <Content Include="Content\scss\vendors\bootstrap\_progress.scss" />
+    <Content Include="Content\scss\vendors\bootstrap\_reboot.scss" />
+    <Content Include="Content\scss\vendors\bootstrap\_root.scss" />
+    <Content Include="Content\scss\vendors\bootstrap\_spinners.scss" />
+    <Content Include="Content\scss\vendors\bootstrap\_tables.scss" />
+    <Content Include="Content\scss\vendors\bootstrap\_toasts.scss" />
+    <Content Include="Content\scss\vendors\bootstrap\_tooltip.scss" />
+    <Content Include="Content\scss\vendors\bootstrap\_transitions.scss" />
+    <Content Include="Content\scss\vendors\bootstrap\_type.scss" />
+    <Content Include="Content\scss\vendors\bootstrap\_utilities.scss" />
+    <Content Include="Content\scss\vendors\bootstrap\_variables.scss" />
+    <Content Include="Content\bootstrap-theme.css.map" />
+    <Content Include="Content\bootstrap-theme.min.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Content\bootstrap.min.css.map" />
+    <Content Include="Content\scss\components\user\_available-banks-table.scss" />
+    <Content Include="Content\css\webfonts\fa-brands-400.eot" />
+    <Content Include="Content\css\webfonts\fa-brands-400.ttf" />
+    <Content Include="Content\css\webfonts\fa-brands-400.woff" />
+    <Content Include="Content\css\webfonts\fa-brands-400.woff2" />
+    <Content Include="Content\css\webfonts\fa-regular-400.eot" />
+    <Content Include="Content\css\webfonts\fa-regular-400.ttf" />
+    <Content Include="Content\css\webfonts\fa-regular-400.woff" />
+    <Content Include="Content\css\webfonts\fa-regular-400.woff2" />
+    <Content Include="Content\css\webfonts\fa-solid-900.eot" />
+    <Content Include="Content\css\webfonts\fa-solid-900.ttf" />
+    <Content Include="Content\css\webfonts\fa-solid-900.woff" />
+    <Content Include="Content\css\webfonts\fa-solid-900.woff2" />
+    <Content Include="Content\scss\components\fontawesome\brands.scss" />
+    <Content Include="Content\scss\components\fontawesome\fontawesome.scss" />
+    <Content Include="Content\scss\components\fontawesome\regular.scss" />
+    <Content Include="Content\scss\components\fontawesome\solid.scss" />
+    <Content Include="Content\scss\components\fontawesome\v4-shims.scss" />
+    <Content Include="Content\scss\components\fontawesome\_animated.scss" />
+    <Content Include="Content\scss\components\fontawesome\_bordered-pulled.scss" />
+    <Content Include="Content\scss\components\fontawesome\_core.scss" />
+    <Content Include="Content\scss\components\fontawesome\_fixed-width.scss" />
+    <Content Include="Content\scss\components\fontawesome\_icons.scss" />
+    <Content Include="Content\scss\components\fontawesome\_larger.scss" />
+    <Content Include="Content\scss\components\fontawesome\_list.scss" />
+    <Content Include="Content\scss\components\fontawesome\_mixins.scss" />
+    <Content Include="Content\scss\components\fontawesome\_rotated-flipped.scss" />
+    <Content Include="Content\scss\components\fontawesome\_screen-reader.scss" />
+    <Content Include="Content\scss\components\fontawesome\_shims.scss" />
+    <Content Include="Content\scss\components\fontawesome\_stacked.scss" />
+    <Content Include="Content\scss\components\fontawesome\_variables.scss" />
+    <Content Include="Content\scss\components\user\_credit-deposit-requests.scss" />
+    <Content Include="Content\scss\components\bank\_home-page.scss" />
+    <Content Include="Content\scss\components\bank\_services-page.scss" />
+    <Content Include="Scripts\2.1.3\jquery.min.js" />
+    <Content Include="Scripts\Admin\add-new-entity-modal.js" />
+    <Content Include="Scripts\Admin\banks-table.js" />
+    <Content Include="Scripts\Admin\calendar.js" />
+    <Content Include="Scripts\Admin\leftSideBarMenu.js" />
+    <Content Include="Scripts\Admin\users-table.js" />
+    <Content Include="Scripts\Admin\validate-password.js" />
+    <Content Include="Scripts\animations\space-animation.js" />
+    <Content Include="Scripts\Bank\bankPropositionsTables.js" />
+    <Content Include="Scripts\Bank\creditTable.js" />
+    <Content Include="Scripts\Bank\depositTable.js" />
+    <Content Include="Scripts\Bank\servicePropositionActions.js" />
+    <Content Include="Scripts\Bank\main-menu.js" />
+    <Content Include="Scripts\Bank\sendRequests.js" />
+    <Content Include="Scripts\bootstrap-material-design.js" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\calendario\data.js" />
+    <Content Include="Scripts\calendario\jquery.calendario.js" />
+    <Content Include="Scripts\calendario\modernizr.custom.63321.js" />
+    <Content Include="Scripts\DataTables\buttons.bootstrap.min.js" />
+    <Content Include="Scripts\DataTables\dataTables.bootstrap.js" />
+    <Content Include="Scripts\DataTables\dataTables.bootstrap.min.js" />
+    <Content Include="Scripts\DataTables\dataTables.bootstrap4.js" />
+    <Content Include="Scripts\DataTables\dataTables.bootstrap4.min.js" />
+    <Content Include="Scripts\DataTables\dataTables.foundation.js" />
+    <Content Include="Scripts\DataTables\dataTables.foundation.min.js" />
+    <Content Include="Scripts\DataTables\dataTables.jqueryui.js" />
+    <Content Include="Scripts\DataTables\dataTables.jqueryui.min.js" />
+    <Content Include="Scripts\DataTables\dataTables.select.min.js" />
+    <Content Include="Scripts\DataTables\dataTables.semanticui.js" />
+    <Content Include="Scripts\DataTables\dataTables.semanticui.min.js" />
+    <Content Include="Scripts\DataTables\dataTable\sort_asc.png" />
+    <Content Include="Scripts\DataTables\dataTable\sort_asc_disabled.png" />
+    <Content Include="Scripts\DataTables\dataTable\sort_both.png" />
+    <Content Include="Scripts\DataTables\dataTable\sort_desc.png" />
+    <Content Include="Scripts\DataTables\dataTable\sort_desc_disabled.png" />
+    <Content Include="Scripts\DataTables\jquery.dataTables.js" />
+    <Content Include="Scripts\DataTables\jquery.dataTables.min.js" />
+    <Content Include="Scripts\jquery-3.3.1.js" />
+    <Content Include="Scripts\jquery-3.3.1.min.js" />
+    <Content Include="Scripts\jquery-3.3.1.min.map" />
+    <Content Include="Scripts\jquery-3.3.1.slim.js" />
+    <Content Include="Scripts\jquery-3.3.1.slim.min.js" />
+    <Content Include="Scripts\jquery-3.3.1.slim.min.map" />
+    <Content Include="Scripts\jquery.min.js" />
+    <Content Include="Scripts\materialize\anime.min.js" />
+    <Content Include="Scripts\materialize\autocomplete.js" />
+    <Content Include="Scripts\materialize\buttons.js" />
+    <Content Include="Scripts\materialize\cards.js" />
+    <Content Include="Scripts\materialize\carousel.js" />
+    <Content Include="Scripts\materialize\cash.js" />
+    <Content Include="Scripts\materialize\characterCounter.js" />
+    <Content Include="Scripts\materialize\chips.js" />
+    <Content Include="Scripts\materialize\collapsible.js" />
+    <Content Include="Scripts\materialize\component.js" />
+    <Content Include="Scripts\materialize\datepicker.js" />
+    <Content Include="Scripts\materialize\dropdown.js" />
+    <Content Include="Scripts\materialize\forms.js" />
+    <Content Include="Scripts\materialize\global.js" />
+    <Content Include="Scripts\materialize\materialbox.js" />
+    <Content Include="Scripts\materialize\materialize.min.js" />
+    <Content Include="Scripts\materialize\modal.js" />
+    <Content Include="Scripts\materialize\parallax.js" />
+    <Content Include="Scripts\materialize\pushpin.js" />
+    <Content Include="Scripts\materialize\range.js" />
+    <Content Include="Scripts\materialize\scrollspy.js" />
+    <Content Include="Scripts\materialize\select.js" />
+    <Content Include="Scripts\materialize\sidenav.js" />
+    <Content Include="Scripts\materialize\slider.js" />
+    <Content Include="Scripts\materialize\tabs.js" />
+    <Content Include="Scripts\materialize\tapTarget.js" />
+    <Content Include="Scripts\materialize\timepicker.js" />
+    <Content Include="Scripts\materialize\toasts.js" />
+    <Content Include="Scripts\materialize\tooltip.js" />
+    <Content Include="Scripts\materialize\waves.js" />
+    <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Scripts\popper.js" />
+    <Content Include="Scripts\User\CreditCalculator.js" />
+    <Content Include="Scripts\User\DepositCalculator.js" />
+    <Content Include="Scripts\User\home-page-tables.js" />
+    <Content Include="Scripts\User\passDataInUrl.js" />
+    <Content Include="Scripts\WebForms\DetailsView.js" />
+    <Content Include="Scripts\WebForms\Focus.js" />
+    <Content Include="Scripts\WebForms\GridView.js" />
+    <Content Include="Scripts\WebForms\Menu.js" />
+    <Content Include="Scripts\WebForms\MenuStandards.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjax.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxApplicationServices.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxComponentModel.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxCore.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxGlobalization.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxHistory.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxNetwork.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxSerialization.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxTimer.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxWebForms.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxWebServices.js" />
+    <Content Include="Scripts\WebForms\SmartNav.js" />
+    <Content Include="Scripts\WebForms\TreeView.js" />
+    <Content Include="Scripts\WebForms\WebForms.js" />
+    <Content Include="Scripts\WebForms\WebParts.js" />
+    <Content Include="Scripts\WebForms\WebUIValidation.js" />
+    <Content Include="Site.Master" />
+    <None Include="User.Master" />
+    <Content Include="ViewSwitcher.ascx" />
+    <Content Include="Web.config" />
+    <Content Include="Bundle.config" />
+    <Content Include="Site.Mobile.Master" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Account\AddPhoneNumber.aspx.cs">
+      <DependentUpon>AddPhoneNumber.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\AddPhoneNumber.aspx.designer.cs">
+      <DependentUpon>AddPhoneNumber.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\Confirm.aspx.cs">
+      <DependentUpon>Confirm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\Confirm.aspx.designer.cs">
+      <DependentUpon>Confirm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\Forgot.aspx.cs">
+      <DependentUpon>Forgot.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\Forgot.aspx.designer.cs">
+      <DependentUpon>Forgot.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\Lockout.aspx.cs">
+      <DependentUpon>Lockout.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\Lockout.aspx.designer.cs">
+      <DependentUpon>Lockout.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\ManageLogins.aspx.cs">
+      <DependentUpon>ManageLogins.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\ManageLogins.aspx.designer.cs">
+      <DependentUpon>ManageLogins.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\ManagePassword.aspx.cs">
+      <DependentUpon>ManagePassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\ManagePassword.aspx.designer.cs">
+      <DependentUpon>ManagePassword.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\OpenAuthProviders.ascx.cs">
+      <DependentUpon>OpenAuthProviders.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\OpenAuthProviders.ascx.designer.cs">
+      <DependentUpon>OpenAuthProviders.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\Register.aspx.cs">
+      <DependentUpon>Register.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\Register.aspx.designer.cs">
+      <DependentUpon>Register.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\RegisterExternalLogin.aspx.cs">
+      <DependentUpon>RegisterExternalLogin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\RegisterExternalLogin.aspx.designer.cs">
+      <DependentUpon>RegisterExternalLogin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\ResetPassword.aspx.cs">
+      <DependentUpon>ResetPassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\ResetPassword.aspx.designer.cs">
+      <DependentUpon>ResetPassword.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\ResetPasswordConfirmation.aspx.cs">
+      <DependentUpon>ResetPasswordConfirmation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\ResetPasswordConfirmation.aspx.designer.cs">
+      <DependentUpon>ResetPasswordConfirmation.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\TwoFactorAuthenticationSignIn.aspx.cs">
+      <DependentUpon>TwoFactorAuthenticationSignIn.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\TwoFactorAuthenticationSignIn.aspx.designer.cs">
+      <DependentUpon>TwoFactorAuthenticationSignIn.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\VerifyPhoneNumber.aspx.cs">
+      <DependentUpon>VerifyPhoneNumber.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\VerifyPhoneNumber.aspx.designer.cs">
+      <DependentUpon>VerifyPhoneNumber.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin.Master.cs">
+      <DependentUpon>Admin.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin.Master.designer.cs">
+      <DependentUpon>Admin.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Admin.Mobile.Master.cs">
+      <DependentUpon>Admin.Mobile.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin.Mobile.Master.designer.cs">
+      <DependentUpon>Admin.Mobile.Master</DependentUpon>
+    </Compile>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="About.aspx.cs">
+      <DependentUpon>About.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="About.aspx.designer.cs">
+      <DependentUpon>About.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
+    <Compile Include="Areas\Admin\Bank.aspx.cs">
+      <DependentUpon>Bank.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Areas\Admin\Bank.aspx.designer.cs">
+      <DependentUpon>Bank.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\Admin\Home.aspx.cs">
+      <DependentUpon>Home.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Areas\Admin\Home.aspx.designer.cs">
+      <DependentUpon>Home.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\Admin\User.aspx.cs">
+      <DependentUpon>User.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Areas\Admin\User.aspx.designer.cs">
+      <DependentUpon>User.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\Bank\BankAreaRegistration.cs" />
+    <Compile Include="Areas\Bank\Home.aspx.cs">
+      <DependentUpon>Home.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Areas\Bank\Home.aspx.designer.cs">
+      <DependentUpon>Home.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\Bank\Request.aspx.cs">
+      <DependentUpon>Request.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Areas\Bank\Request.aspx.designer.cs">
+      <DependentUpon>Request.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\Bank\Services.aspx.cs">
+      <DependentUpon>Services.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Areas\Bank\Services.aspx.designer.cs">
+      <DependentUpon>Services.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\User\AvailableBanks.aspx.cs">
+      <DependentUpon>AvailableBanks.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Areas\User\AvailableBanks.aspx.designer.cs">
+      <DependentUpon>AvailableBanks.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\User\Bank.aspx.cs">
+      <DependentUpon>Bank.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Areas\User\Bank.aspx.designer.cs">
+      <DependentUpon>Bank.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\User\BankServices.aspx.cs">
+      <DependentUpon>BankServices.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Areas\User\BankServices.aspx.designer.cs">
+      <DependentUpon>BankServices.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\User\CreditRequest.aspx.cs">
+      <DependentUpon>CreditRequest.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Areas\User\CreditRequest.aspx.designer.cs">
+      <DependentUpon>CreditRequest.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\User\DepositRequest.aspx.cs">
+      <DependentUpon>DepositRequest.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Areas\User\DepositRequest.aspx.designer.cs">
+      <DependentUpon>DepositRequest.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\User\Home.aspx.cs">
+      <DependentUpon>Home.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Areas\User\Home.aspx.designer.cs">
+      <DependentUpon>Home.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\User\UserAreaRegistration.cs" />
+    <Compile Include="Bank.Master.cs">
+      <DependentUpon>Bank.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Bank.Master.designer.cs">
+      <DependentUpon>Bank.Master</DependentUpon>
+    </Compile>
+    <Compile Include="UserAvailableBank.Master.cs">
+      <DependentUpon>UserAvailableBank.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserAvailableBank.Master.designer.cs">
+      <DependentUpon>UserAvailableBank.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Contact.aspx.cs">
+      <DependentUpon>Contact.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Contact.aspx.designer.cs">
+      <DependentUpon>Contact.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Site.Master.cs">
+      <DependentUpon>Site.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Site.Master.designer.cs">
+      <DependentUpon>Site.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Site.Mobile.Master.cs">
+      <DependentUpon>Site.Mobile.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Site.Mobile.Master.designer.cs">
+      <DependentUpon>Site.Mobile.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Startup.cs" />
+    <Compile Include="User.Master.cs">
+      <DependentUpon>User.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="User.Master.designer.cs">
+      <DependentUpon>User.Master</DependentUpon>
+    </Compile>
+    <Compile Include="ViewSwitcher.ascx.cs">
+      <DependentUpon>ViewSwitcher.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ViewSwitcher.ascx.designer.cs">
+      <DependentUpon>ViewSwitcher.ascx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <None Include="packages.config" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CreditCalculator.Configurations\CreditCalculator.Configurations.csproj">
+      <Project>{B6A0A523-36B3-4719-9F96-DE39536ABDD2}</Project>
+      <Name>CreditCalculator.Configurations</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CreditCalculator.Entity\CreditCalculator.Entity.csproj">
+      <Project>{a77dcbe9-b914-4ec7-8765-cd1fd8f1efe7}</Project>
+      <Name>CreditCalculator.Entity</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CreditCalculator.Services\CreditCalculator.Services.csproj">
+      <Project>{2DDE0C3A-F90A-4076-A0FB-01053F082B0B}</Project>
+      <Name>CreditCalculator.Services</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CreditCalculator.ViewModels\CreditCalculator.ViewModels.csproj">
+      <Project>{83595361-4CA8-4756-B65D-E51186E58BAC}</Project>
+      <Name>CreditCalculator.ViewModels</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DAL\CreditCalculator.DAL.csproj">
+      <Project>{90BFD291-4263-4E46-8311-E75F691BDB1E}</Project>
+      <Name>CreditCalculator.DAL</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>49775</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:49775/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

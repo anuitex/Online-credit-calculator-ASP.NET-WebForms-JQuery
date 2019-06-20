@@ -1,0 +1,116 @@
+﻿.site-index-body {
+    background-color: #f2f4f8;
+
+    form {
+        .body-content {
+            .login-page-main-wrapper {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                height: 100%;
+                padding-top: 0px;
+
+                .login-page-wrapper {
+
+                    .row {
+                        display: flex;
+                        justify-content: center;
+
+                        .middle-wrapper {
+                            width: 100%;
+
+                            #loginForm {
+                                width: 400px;
+
+                                .form-horizontal {
+                                    .form-horizontal-login {
+                                        background: white;
+                                        width: 100%;
+                                        padding: 20px 40px 12px 40px;
+
+                                        .form-title {
+                                            .big-title {
+                                                font-size: 30px;
+                                                font-weight: bold;
+                                            }
+
+                                            .small-title {
+                                            }
+                                        }
+
+                                        .form-text-boxes {
+                                            margin-top: 40px;
+
+                                            .form-group {
+                                                .middle-wrapper {
+
+                                                    .text-box-wrapper {
+                                                        display: flex;
+
+                                                        .icon-wrapper {
+                                                            display: flex;
+                                                            align-items: center;
+                                                            justify-content: center;
+                                                            width: 50px;
+                                                            border-left: 1px solid #c1c1c1;
+                                                            border-top: 1px solid #c1c1c1;
+                                                            border-bottom: 1px solid #c1c1c1;
+
+                                                            i {
+                                                                /*width: 40px;*/
+                                                            }
+                                                        }
+
+                                                        input {
+                                                            height: 35px;
+                                                            border: 1px solid #c1c1c1;
+                                                            padding-left: 10px;
+                                                            margin: 0;
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+
+                                        .login-page-action-wrapper {
+                                            display: flex;
+                                            justify-content: space-around;
+
+                                            .form-group {
+                                                .middle-wrapper {
+                                                    margin: 0;
+                                                    padding: 0;
+
+                                                    .checkbox {
+                                                        input {
+                                                            opacity: 1;
+                                                            pointer-events:unset;
+                                                        }
+
+                                                        label {
+                                                            font-size: 14px;
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+
+                                        .regester-wrapper {
+                                            display: flex;
+                                            justify-content: center;
+                                        }
+
+                                        .form-group {
+                                            margin-right: 0;
+                                            margin-left: 0;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,84 @@
+﻿.site-index-body {
+
+    form {
+        .body-content {
+            .register-page-main-wrapper {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                height: 100%;
+                padding-top: 0px;
+
+                .register-page-wrapper {
+                    background: white;
+                    width: 400px;
+                    padding: 20px 40px 12px 40px;
+
+                    .register-page-form-wrapper {
+                        .form-title {
+
+                            .big-title {
+                                font-size: 30px;
+                                font-weight: bold;
+                            }
+
+                            .small-title {
+                            }
+                        }
+
+                        .form-horizontal {
+                            .form-horizontal-register {
+                                .form-text-boxes {
+                                    margin-top: 40px;
+
+                                    .form-group {
+                                        display: flex;
+                                        justify-content: center;
+
+                                        .middle-wrapper {
+                                            .text-box-wrapper {
+                                                display: flex;
+
+                                                .icon-wrapper {
+                                                    display: flex;
+                                                    align-items: center;
+                                                    justify-content: center;
+                                                    width: 50px;
+                                                    border-left: 1px solid #c1c1c1;
+                                                    border-top: 1px solid #c1c1c1;
+                                                    border-bottom: 1px solid #c1c1c1;
+
+                                                    i {
+                                                        /*width: 40px;*/
+                                                    }
+                                                }
+
+                                                input {
+                                                    height: 35px;
+                                                    border: 1px solid #c1c1c1;
+                                                    padding-left: 10px;
+                                                    margin: 0;
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+
+                                .form-group-register-button-wrapper {
+                                    .form-group {
+                                        .middle-wrapper {
+                                            width: 100%;
+                                            display: flex;
+                                            justify-content: center;
+                                            margin: 15px 0 0 0;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

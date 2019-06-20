@@ -1,0 +1,140 @@
+﻿body.admin-body {
+    .nav-pills .nav-link.active, .nav-pills .show > .nav-link {
+        background-color: unset;
+    }
+
+    form {
+        .navbar-inverse {
+            background-image: url('../../Content/images/Admin/leftMenuBackground/nature.jpg');
+            background-size: cover;
+            padding: 0;
+            /*background: rgba(0, 0, 0, 0.5);
+            background: rgba(0, 0, 0, 0.5);
+            color: rgba(0, 0, 0, 0.5);*/
+        }
+
+        .navbar-inverse.navbar-inverse-admin-page {
+            /*width: 20% !important;*/
+            min-width: 240px;
+            /*max-width: 260px;*/
+            height: 100%;
+            border-bottom: none;
+            align-items: unset;
+            float: left;
+            margin-bottom: 0;
+
+            .navbar-collapse {
+                border-right: 1px solid white;
+                max-height: 100%;
+                background-color: rgba(0, 0, 0, 0.7);
+                color: rgba(0, 0, 0, 0.7);
+
+                .admin-title-wrapper {
+                    margin: 15px;
+                    display: flex;
+                    justify-content: center;
+                    align-content: center;
+
+                    .admin-title-text {
+                        font-size: 20px;
+                        color: #15dae0;
+                    }
+                }
+
+                .logged-user-info {
+                    display: flex;
+                    justify-content: center;
+
+                    .navbar-right.admin-page {
+                        display: flex;
+                        flex-direction: column;
+                        width: 80%;
+                        margin-right: 0 !important;
+                        border-bottom: 1px solid white;
+                        float: unset !important;
+                        justify-content: space-between;
+
+                        li {
+                            display: flex;
+                            justify-content: center;
+                            float: none;
+                            padding: 0 9px 11px 9px;
+
+                            a {
+                                color: white;
+                                display: inline !important;
+                                padding: 0;
+                                font-size: 12px;
+                            }
+                        }
+                    }
+                }
+
+                .left-side-bar-menu-wrapper {
+
+                    #v-pills-tab {
+                        margin-top: 35px;
+                        font-size: 15px;
+                        padding: 0 15px;
+
+                        a {
+                            position: relative;
+                            text-align: center;
+                            color: #15dae0;
+
+                            i.left-icon {
+                                position: absolute;
+                                left: 10px;
+                                top: 9px;
+                            }
+
+                            i.right-icon {
+                                display: none;
+                                position: absolute;
+                                right: 10px;
+                                top: 9px;
+                            }
+                        }
+
+                        a.active {
+                            i.right-icon {
+                                display: block;
+                                position: absolute;
+                                right: 10px;
+                                top: 9px;
+                            }
+                        }
+
+
+
+                        a:hover {
+                            transition: box-shadow 0.3s ease-in-out;
+                            -webkit-box-shadow: 0px 2px 5px 0px rgba(3,229,245,1);
+                            -moz-box-shadow: 0px 2px 5px 0px rgba(3,229,245,1);
+                            box-shadow: 0px 2px 5px 0px rgba(3,229,245,1);
+                        }
+                    }
+                }
+            }
+        }
+
+
+        .container.body-content-admin {
+            /*width: 80% !important;*/
+            margin: 0;
+            padding: 0;
+            /*float: right;*/
+            .main-wrapper {
+            }
+
+
+            .main-wrapper {
+                margin-top: 100px;
+
+                .admin-title-wrapper {
+                    font-size: 30px;
+                }
+            }
+        }
+    }
+}

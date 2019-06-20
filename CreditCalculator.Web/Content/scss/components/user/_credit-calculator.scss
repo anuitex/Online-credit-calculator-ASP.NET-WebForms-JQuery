@@ -1,0 +1,350 @@
+﻿html {
+    height: 100%;
+    font-family: 'Work Sans', sans-serif;
+
+    .container.user-body-content {
+        margin-top: 0;
+
+        .user-calculator {
+            height: 100%;
+            margin-top: 80px;
+
+            .calculator-wrapper {
+                .hidden-file{
+                    display:none;
+                }
+                
+                .user-info-wrapper {
+                    margin-top: 65px !important;
+                }
+
+                .credit-title-wrapper {
+                    display: flex;
+                    justify-content: center;
+
+                    .page-title-text {
+                        font-size: 27px;
+                    }
+                }
+
+                #sendCreditWrapper {
+                    .credit-calculator-currency {
+                        .btn-group {
+                            button {
+                                background-color: #78c588 !important;
+                                margin-bottom: 0;
+                                height: 100%;
+
+                                .currency-icon.active {
+                                    color: blue !important;
+                                }
+                            }
+                        }
+                    }
+
+                    .credit-calculator-content {
+                        margin-top: 45px;
+                        display: flex;
+
+                        .calculator-compute {
+                            width: 60%;
+
+                            .money-label, .month-label {
+                                display: flex;
+                                justify-content: center;
+                            }
+
+                            .selected-money-quantity, .selected-month-quantity {
+                                display: flex;
+                                align-items: center;
+                                position: relative;
+
+                                output {
+                                    top: -6px;
+                                    right: 55px;
+                                    margin-left: 9px;
+                                    min-width: 75px;
+                                    font-size: 18px;
+                                }
+                            }
+                        }
+
+                        .calculator-result {
+                            position: relative;
+                            background: #e6e2e6;
+                            width: 40%;
+                            padding-bottom: 19px;
+
+                            .calculator-result-title {
+                                position: absolute;
+                                display: inline-block;
+                                top: -35px;
+                                left: 156px;
+                                font-size: 23px;
+                            }
+
+                            .money-rate-wrapper {
+                                display: flex;
+                                justify-content: center;
+                                margin-top: 21px;
+                                margin-bottom: 30px;
+
+                                .show-money-rate-title-span {
+                                    font-size: 23px;
+                                    display: inline-block;
+
+                                    .show-money-rate-value-span {
+                                        display: inline-flex;
+                                        width: 62px;
+                                        height: 53px;
+                                        justify-content: center;
+                                        align-items: center;
+                                        border: 2px solid white;
+                                        border-radius: 50px;
+                                    }
+                                }
+                            }
+
+                            .money-get-quantity-wrapper, .money-back-quantity-wrapper {
+                                .money-get-quantity, .money-back-quantity {
+                                    margin-left: 30%;
+                                }
+                            }
+                        }
+                    }
+                }
+
+
+                .send-order-button-wrapper {
+                    margin-left: 75%;
+                    margin-top: 10px;
+                    margin-bottom: 10px;
+
+                    .send-order-button {
+                        /*background: #21c548;
+                        color: white;*/
+                        border: 2px solid #969696;
+                        border-radius: 3px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+@media screen and (max-width: 991px) {
+    .calculator-result-title {
+        left: 112px !important;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .credit-calculator-content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .calculator-result {
+        margin-top: 42px;
+    }
+
+    .calculator-result-title {
+        left: 66px !important;
+    }
+
+    .calculator-result {
+        min-width: 200px;
+    }
+
+    .send-order-button-wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-left: 0 !important;
+        margin-bottom: 12px;
+
+        .send-order-button {
+            width: 50%;
+        }
+    }
+
+    .show-money-rate-title-span {
+        text-align: center;
+    }
+
+
+    .money-get-quantity-wrapper, .money-back-quantity-wrapper {
+        .money-get-quantity, .money-back-quantity {
+            margin-left: 8% !important;
+        }
+    }
+
+    .money-rate-wrapper {
+        margin-bottom: 11px !important;
+    }
+
+    .money-back-quantity-wrapper {
+        margin-bottom: 10px !important;
+    }
+
+    .credit-calculator-content {
+        margin-top: 30px !important;
+    }
+}
+
+
+@media screen and (min-width: 992px) {
+    .send-order-button-wrapper {
+        margin-left: 76% !important;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .send-order-button-wrapper {
+        margin-left: 77% !important;
+    }
+}
+
+$lighter-blue: #abe0ed;
+$light-blue: #46b7d5;
+$blue: #0085b2;
+$orange: #FD8521;
+
+h1 {
+    font-weight: 300;
+}
+
+#helper {
+    float: left;
+    margin-top: 20px;
+    color: $light-blue;
+    font-style: italic;
+}
+
+output {
+    display: block;
+    font-size: 3em;
+}
+
+
+.rangeslider,
+.rangeslider__fill {
+    display: block;
+    -moz-box-shadow: inset 0px 1px 3px rgba(0, 0, 0, 0.3);
+    -webkit-box-shadow: inset 0px 1px 3px rgba(0, 0, 0, 0.3);
+    box-shadow: inset 0px 1px 3px rgba(0, 0, 0, 0.3);
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+}
+
+.rangeslider {
+    background: #e6e6e6;
+    position: relative;
+}
+
+.rangeslider--horizontal {
+    height: 20px;
+    width: 80%;
+}
+
+.rangeslider--vertical {
+    width: 20px;
+    min-height: 150px;
+    max-height: 100%;
+}
+
+.rangeslider--disabled {
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=40);
+    opacity: 0.4;
+}
+
+.rangeslider__fill {
+    background: -webkit-linear-gradient(left, $lighter-blue, $light-blue);
+    background: -o-linear-gradient(right, $lighter-blue, $light-blue);
+    background: -moz-linear-gradient(right, $lighter-blue, $light-blue);
+    background: linear-gradient(to right, $lighter-blue, $light-blue);
+    position: absolute;
+}
+
+.rangeslider--horizontal .rangeslider__fill {
+    top: 0;
+    height: 100%;
+}
+
+.rangeslider--vertical .rangeslider__fill {
+    bottom: 0;
+    width: 100%;
+}
+
+.rangeslider__handle {
+    background: white;
+    border: 1px solid #ccc;
+    cursor: pointer;
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJvYmplY3RCb3VuZGluZ0JveCIgeDE9IjAuNSIgeTE9IjAuMCIgeDI9IjAuNSIgeTI9IjEuMCI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2ZmZmZmZiIgc3RvcC1vcGFjaXR5PSIwLjAiLz48c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiMwMDAwMDAiIHN0b3Atb3BhY2l0eT0iMC4xIi8+PC9saW5lYXJHcmFkaWVudD48L2RlZnM+PHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNncmFkKSIgLz48L3N2Zz4g');
+    background-size: 100%;
+    background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, rgba(255, 255, 255, 0)), color-stop(100%, rgba(0, 0, 0, 0.1)));
+    background-image: -moz-linear-gradient(rgba(255, 255, 255, 0), rgba(0, 0, 0, 0.1));
+    background-image: -webkit-linear-gradient(rgba(255, 255, 255, 0), rgba(0, 0, 0, 0.1));
+    background-image: linear-gradient(rgba(255, 255, 255, 0), rgba(0, 0, 0, 0.1));
+    -moz-box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+    -webkit-box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+}
+
+.rangeslider__handle:after {
+    content: "";
+    display: block;
+    width: 18px;
+    height: 18px;
+    margin: auto;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJvYmplY3RCb3VuZGluZ0JveCIgeDE9IjAuNSIgeTE9IjAuMCIgeDI9IjAuNSIgeTI9IjEuMCI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzAwMDAwMCIgc3RvcC1vcGFjaXR5PSIwLjEzIi8+PHN0b3Agb2Zmc2V0PSIxMDAlIiBzdG9wLWNvbG9yPSIjZmZmZmZmIiBzdG9wLW9wYWNpdHk9IjAuMCIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JhZCkiIC8+PC9zdmc+IA==');
+    background-size: 100%;
+    background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, rgba(0, 0, 0, 0.13)), color-stop(100%, rgba(255, 255, 255, 0)));
+    background-image: -moz-linear-gradient(rgba(0, 0, 0, 0.13), rgba(255, 255, 255, 0));
+    background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.13), rgba(255, 255, 255, 0));
+    background-image: linear-gradient(rgba(0, 0, 0, 0.13), rgba(255, 255, 255, 0));
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+}
+
+.rangeslider__handle:active {
+    background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJvYmplY3RCb3VuZGluZ0JveCIgeDE9IjAuNSIgeTE9IjAuMCIgeDI9IjAuNSIgeTI9IjEuMCI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzAwMDAwMCIgc3RvcC1vcGFjaXR5PSIwLjEiLz48c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiMwMDAwMDAiIHN0b3Atb3BhY2l0eT0iMC4xMiIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JhZCkiIC8+PC9zdmc+IA==');
+    background-size: 100%;
+    background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, rgba(0, 0, 0, 0.1)), color-stop(100%, rgba(0, 0, 0, 0.12)));
+    background-image: -moz-linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.12));
+    background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.12));
+    background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.12));
+}
+
+.rangeslider--horizontal .rangeslider__handle {
+    top: -10px;
+    touch-action: pan-y;
+    -ms-touch-action: pan-y;
+}
+
+.rangeslider--vertical .rangeslider__handle {
+    left: -10px;
+    touch-action: pan-x;
+    -ms-touch-action: pan-x;
+}
+
+input[type="range"]:focus + .rangeslider .rangeslider__handle {
+    -moz-box-shadow: 0 0 8px rgba(255, 0, 255, 0.9);
+    -webkit-box-shadow: 0 0 8px rgba(255, 0, 255, 0.9);
+    box-shadow: 0 0 8px rgba(255, 0, 255, 0.9);
+}

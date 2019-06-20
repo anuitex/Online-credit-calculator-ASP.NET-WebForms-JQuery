@@ -1,0 +1,43 @@
+﻿.site-index-body {
+    background-color:black !important;
+
+    form {
+        .site-index-body-navbar {
+            background: black !important;
+        }
+
+        .body-content {
+            .home-page-main-wrapper {
+                height: 100%;
+
+                .home-page-wrapper {
+                    background: url('../../Content/images/Application/background/home-page.jpg');
+                    background-size: cover;
+                    height: 100%;
+
+
+                    .home-page-title-main-wrapper {
+                        display: flex;
+                        justify-content: center;
+
+                        .home-page-title-wrapper {
+                            height: 90px;
+                            width: 30%;
+                            background: black;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            border-radius: 12px;
+                            margin-top: 42px;
+
+                            .home-page-title-text {
+                                font-size: 40px;
+                                color: white;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

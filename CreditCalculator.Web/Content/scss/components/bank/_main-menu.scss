@@ -1,0 +1,186 @@
+﻿.bank-admin-body {
+    form {
+        min-height: 345px;
+
+        .navbar.navbar-inverse.navbar-fixed-top {
+            background-color: rgba(174, 242, 229, 0.5);
+            position: absolute;
+            padding: 0;
+            border: none;
+            margin-bottom: unset;
+
+            .navbar-collapse {
+                display: flex !important;
+                justify-content: center;
+
+                .navbar-right {
+                    margin-right: 0;
+                    flex-direction: row !important;
+
+                    li {
+                        font-size: 14px;
+
+                        a {
+                            color: black;
+                        }
+                    }
+                }
+            }
+        }
+
+        .bank-admin-content-wrapper {
+            background: url('../../Content/images/background/bank-admin/city.jpg');
+            height: 100%;
+            display: flex;
+            background-size: cover;
+
+            .navbar.navbar-inverse.navbar-fixed-left {
+                margin-top: 80px;
+                margin-left: 10px;
+                width: 250px;
+                min-height: 225px;
+                display: flex;
+                justify-content: center;
+                background-color: transparent;
+                border: none;
+
+                .toggle--active {
+                    background-color: rgba(174, 242, 229, 0.5);
+
+                    .toggle-menu {
+                        li {
+                            /*transform: rotate(-25deg);*/
+                        }
+                    }
+                }
+                /*.nav.navbar-nav {
+                li {
+                    float: unset;
+                    transform: rotate(-25deg);
+                }
+            }*/
+            }
+        }
+    }
+    ///Animate menu
+    .navicon {
+        width: 100%;
+        background: transparent;
+        margin: 80px auto 40px;
+        position: relative;
+        height: 30px;
+        width: 50px;
+        display: block;
+        z-index: 99;
+        -webkit-transition: linear 0.5s all;
+        transition: linear 0.5s all;
+    }
+
+    .navicon:before, .navicon:after {
+        background: #fff;
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
+        content: "";
+        height: 3px;
+        left: 0;
+        -webkit-transition: 0.8s ease;
+        transition: 0.8s ease;
+        width: 45px;
+    }
+
+    .navicon:before {
+        box-shadow: #fff 0 14px 0 0;
+        position: absolute;
+        top: 0;
+    }
+
+    .navicon:after {
+        position: absolute;
+        top: 28px;
+    }
+
+    .navicon--active {
+        margin-top: 20px;
+        -webkit-transition: linear 0.5s all;
+        transition: linear 0.5s all;
+    }
+
+    .navicon--active:before {
+        box-shadow: transparent 0 0 0 0;
+        top: 15px;
+        -webkit-transform: rotate(225deg);
+        -ms-transform: rotate(225deg);
+        transform: rotate(225deg);
+    }
+
+    .navicon--active:after {
+        top: 15px;
+        -webkit-transform: rotate(315deg);
+        -ms-transform: rotate(315deg);
+        transform: rotate(315deg);
+    }
+
+    .toggle {
+        display: block;
+        width: 100%;
+        /*background-color: rgba(255, 255, 255, 0.8);*/
+        padding: 15px;
+        display: block;
+        opacity: 0;
+        -webkit-transition: ease-in 0.5s all;
+        transition: ease-in 0.5s all;
+        -webkit-transform: translateY(-200%);
+        -ms-transform: translateY(-200%);
+        transform: translateY(-200%);
+        height: 100%;
+        margin-top: 0;
+    }
+
+    .toggle--active {
+        display: block;
+        opacity: 1;
+        -webkit-transition: ease-in 0.5s all;
+        transition: ease-in 0.5s all;
+        -webkit-transform: translateY(0);
+        -ms-transform: translateY(0);
+        transform: translateY(0);
+    }
+
+    /*.toggle-menu {
+        margin-bottom: 25px;
+    }*/
+
+    .toggle-menu li {
+        display: block;
+        margin: 10px auto;
+    }
+
+    .toggle-menu li a {
+        text-decoration: none;
+        color: #000;
+        display: block;
+        text-align: center;
+        font-size: 17px;
+        text-transform: uppercase;
+        border-bottom: 2px solid transparent;
+        -webkit-transition: linear 0.5s all;
+        transition: linear 0.5s all;
+        font-weight: 500;
+        padding: 5px 0;
+    }
+
+    .toggle-menu li a span {
+        text-transform: lowercase;
+    }
+
+    .toggle-menu li a:hover {
+        color: #db5523;
+        border-bottom: 2px solid #db5523;
+        -webkit-transition: linear 0.5s all;
+        transition: linear 0.5s all;
+        -webkit-transform: scale(1.15);
+        -ms-transform: scale(1.15);
+        transform: scale(1.15);
+        font-weight: 700;
+    }
+}

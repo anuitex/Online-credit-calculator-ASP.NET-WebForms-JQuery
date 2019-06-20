@@ -1,0 +1,142 @@
+﻿$red: #ff3c4b;
+
+
+
+#addServicePropositionModal {
+    align-items:center;
+    justify-content:center;
+    width: 40%;
+    top: 0 !important;
+    margin: 0 auto !important;
+    max-height: unset !important;
+    background-color: transparent !important;
+    box-shadow: unset !important;
+
+    select{
+        display:block !important;
+        max-width:180px;
+    }
+
+    .card {
+        width: 100%;
+        min-width: 354px;
+        max-width: 354px;
+        padding: 0 !important;
+        margin-top: 10%;
+        background-color: transparent !important;
+
+        .modal-content-wrapper {
+            .modal-content {
+                border-top-left-radius: 5px;
+                border-top-right-radius: 5px;
+                padding-top: 20px;
+                padding-bottom: 0px;
+
+                .modal-title-wrapper {
+                    display: flex;
+                    justify-content: center;
+                    box-shadow: 0 0.25rem 0.5rem rgba(0,0,0,.5);
+                    margin-bottom: 15px;
+
+                    .modal-title-text {
+                        font-size: 22px;
+                    }
+                }
+
+                span.bmd-form-group {
+                    padding: 0 !important;
+
+                    .input-group {
+                        justify-content: space-between;
+                        margin-bottom: 0;
+
+                        label {
+                            display: flex;
+                            align-items: center;
+                        }
+
+                        input {
+                            width: unset !important;
+                            padding: 0;
+                        }
+                    }
+
+                    .input-group.bottom-element {
+                        margin-bottom: 0;
+                    }
+                }
+            }
+
+            .modal-footer {
+                display: flex;
+                justify-content: center;
+                border-bottom-left-radius: 5px;
+                border-bottom-right-radius: 5px;
+                padding-top: 13px;
+            }
+        }
+    }
+
+    .card {
+        margin-left: auto;
+        margin-right: auto;
+        padding: 1rem 3rem;
+        width: 400px;
+        background-color: #fff;
+        border-radius: 1em;
+    }
+
+    input {
+        background-color: transparent;
+        border: 0;
+        border-bottom: 1px solid #333;
+        padding: 0.75em 0;
+        outline: none;
+        width: 100%;
+        position: relative;
+        z-index: 2;
+    }
+    .label-floating {
+        position: absolute;
+        z-index: 1;
+        left: 0em;
+        bottom: 0.75em;
+        color: $red;
+        transition: 0.3s;
+    }
+
+    .label-floating_lg {
+        position: absolute;
+        z-index: 1;
+        left: 0em;
+        bottom: 0.75em;
+        color: $red;
+        transition: 0.3s;
+        font-size: 1.3em;
+    }
+
+    .input-group {
+        position: relative;
+        margin-bottom: 1.5rem;
+    }
+    input:focus + .label-floating {
+        bottom: 3.25em;
+        font-size: 0.75em;
+        color: $red;
+    }
+
+    input:focus + .label-floating_lg {
+        bottom: 3.25em;
+        font-size: 0.75em;
+        color: $red;
+    }
+
+    input:valid + .label-floating {
+        bottom: 3.25em;
+        font-size: 0.75em;
+    }
+
+    input:valid + .label-floating_lg {
+        opacity: 0;
+    }
+}

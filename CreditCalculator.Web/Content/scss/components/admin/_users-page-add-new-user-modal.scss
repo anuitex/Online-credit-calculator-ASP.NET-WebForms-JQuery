@@ -1,0 +1,299 @@
+﻿* {
+    box-sizing: border-box;
+}
+
+html, body {
+    min-height: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: top center;
+    font-family: helvetica neue, helvetica, arial, sans-serif;
+    font-weight: 200;
+
+    &.modal-active {
+        overflow: hidden;
+    }
+}
+
+#modal-container {
+    position: fixed;
+    display: table;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    transform: scale(0);
+    z-index: 9999;
+
+    &.one {
+        transform: scaleY(.01) scaleX(0);
+        animation: unfoldIn 1s cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards;
+
+        .modal-background {
+            .modal {
+                transform: scale(0);
+                animation: zoomIn .5s .8s cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards;
+            }
+        }
+
+        &.out {
+            transform: scale(1);
+            animation: unfoldOut 1s .3s cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards;
+
+            .modal-background {
+                .modal {
+                    animation: zoomOut .5s cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards;
+                }
+            }
+        }
+    }
+
+    .modal-background {
+        display: table-cell;
+        background: rgba(0,0,0,.8);
+        text-align: center;
+        vertical-align: middle;
+        background: url('../../../images/background/Dark-Grey-Texture-Wallpaper-5.jpg');
+
+        .modal {
+            /*height: 775px !important;
+            background: white;
+            padding: 50px;
+            display: inline-block;
+            border-radius: 3px;
+            font-weight: 300;
+            position: relative;
+            max-height: unset !important;*/
+
+            h2 {
+                font-size: 25px;
+                line-height: 25px;
+                margin-bottom: 15px;
+            }
+
+            p {
+                font-size: 18px;
+                line-height: 22px;
+            }
+
+            .modal-svg {
+                position: absolute;
+                top: 0;
+                left: 0;
+                height: 100%;
+                width: 100%;
+                border-radius: 3px;
+
+                rect {
+                    stroke: #fff;
+                    stroke-width: 2px;
+                    stroke-dasharray: 778;
+                    stroke-dashoffset: 778;
+                }
+            }
+        }
+    }
+}
+
+.admin-add-new-user-wrapper {
+    #modal-container {
+        .modal-background {
+            .modal {
+                width: 550px;
+                height: 800px !important;
+                border-radius: 15px;
+                -webkit-box-shadow: inset 0px 0px 9px 9px rgba(50,53,54,1);
+                -moz-box-shadow: inset 0px 0px 9px 9px rgba(50,53,54,1);
+                box-shadow: inset 0px 0px 9px 9px rgba(50,53,54,1);
+                cursor: default;
+                max-height: unset !important;
+
+
+
+                .admin-add-new-user-title-wrapper {
+                    color: #1b7a80;
+                }
+
+                .admin-add-new-user-info-wrapper {
+                    width: 100%;
+
+                    label {
+                        font-size: 14px;
+                        color: black;
+                    }
+
+                    .input-field {
+                        display: flex;
+                        justify-content: flex-end;
+                    }
+
+                    .input-field-email {
+                        .helper-text {
+                            margin-left: 27px;
+                            margin-top: 5px;
+                        }
+                    }
+
+                    select {
+                        display: block;
+                        font-size: 14px;
+                        border: 1px solid black;
+                    }
+
+                    .user-email-wrapper {
+                        display: flex;
+                    }
+                }
+
+                .admin-add-new-user-buttons-wrapper {
+                    display: flex;
+                    justify-content: space-around;
+                    margin-top: 30px;
+
+                    input {
+                        background: #00aab9;
+                        height: 30px;
+                        font-size: 17px;
+                        font-weight: bold;
+                        color: white;
+                        padding-right: 4px;
+                        padding-left: 4px;
+                        border-radius: 3px;
+                        border: none;
+                    }
+
+                    input:hover {
+                        -webkit-box-shadow: 0 3px 16px -2px #4caccf;
+                        -moz-box-shadow: 0 3px 16px -2px #4caccf;
+                        box-shadow: 0 3px 16px -2px #4caccf;
+                        transition: box-shadow 0.2s;
+                    }
+                }
+            }
+        }
+    }
+}
+
+/*.admin-add-new-user-wrapper {
+    #modal-container {
+        .modal-background {
+            .modal {
+                width: 550px;
+                height: 760px !important;
+
+                .admin-add-new-user-table {
+                    width: 100%;
+
+                    tr {
+                        height: 55px;
+                        border-bottom: none;
+
+                        td {
+                            font-size: 18px;
+
+                            select.userRolesDropDown {
+                                display: block;
+                                padding: 0;
+                                background: transparent;
+
+                                option {
+                                    background: transparent !important;
+                                }
+                            }
+                        }
+
+                        td.add-new-user-label {
+                            width: 200px;
+                        }
+
+                        td.add-new-user-value {
+                            width: 282px;
+
+                            input {
+                                margin-bottom: 0;
+                            }
+                        }
+                    }
+                }
+
+                .admin-add-new-user-buttons-wrapper {
+                    display: flex;
+                    justify-content: space-around;
+                    margin-top: 30px;
+
+                    input {
+                        width: 100px;
+                        height: 30px;
+                        border-radius: 30px;
+                        color: black;
+                        font-size: 18px;
+                        font-weight: bold;
+                        line-height: normal;
+                    }
+
+                    .admin-add-new-user-button-cansel {
+                        background: #ffb4b4;
+                        border: 3px solid #fd3030;
+                    }
+
+                    .admin-add-new-user-button-register {
+                        background: #cbfdcb;
+                        border: 3px solid #1fd61f;
+                    }
+                }
+            }
+        }
+    }
+}*/
+
+.admin-users-main-wrapper .admin-add-new-user-wrapper:hover {
+    cursor: default;
+}
+
+@keyframes unfoldIn {
+    0% {
+        transform: scaleY(.005) scaleX(0);
+    }
+
+    50% {
+        transform: scaleY(.005) scaleX(1);
+    }
+
+    100% {
+        transform: scaleY(1) scaleX(1);
+    }
+}
+
+@keyframes unfoldOut {
+    0% {
+        transform: scaleY(1) scaleX(1);
+    }
+
+    50% {
+        transform: scaleY(.005) scaleX(1);
+    }
+
+    100% {
+        transform: scaleY(.005) scaleX(0);
+    }
+}
+
+@keyframes zoomIn {
+    0% {
+        transform: scale(0);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes zoomOut {
+    0% {
+        transform: scale(1);
+    }
+
+    100% {
+        transform: scale(0);
+    }
+}

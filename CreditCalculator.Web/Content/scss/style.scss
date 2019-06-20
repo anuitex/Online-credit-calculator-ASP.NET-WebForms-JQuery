@@ -1,0 +1,44 @@
+﻿//base
+@import 'base/reset';
+@import 'base/main';
+
+//vendors
+@import 'vendors/materialize/materialize';
+@import 'components/fontawesome/fontawesome';
+
+//components
+@import 'components/index/index-page';
+@import 'components/index/index-animation';
+@import 'components/index/login';
+@import 'components/index/register';
+
+@import 'components/user/available-banks-table';
+@import 'components/user/credit-deposit-requests';
+@import 'components/user/bank-page';
+@import 'components/user/bank-services-page';
+@import 'components/user/credit-calculator';
+@import 'components/user/deposit-calculator';
+@import 'components/user/home-page-tables';
+@import 'components/user/user-banks-top-menu';
+@import 'components/user/top-menu';
+
+@import 'components/bank/user-requests-page';
+@import 'components/bank/services-page';
+@import 'components/bank/main-menu';
+@import 'components/bank/home-page';
+@import 'components/bank/bank-user-requests-modal';
+@import 'components/bank/edit-proposition-modal';
+@import 'components/bank/add-proposition-modal';
+@import 'components/bank/delete-proposition-modal';
+
+@import 'components/admin/left-side-menu';
+@import 'components/admin/home-page';
+@import 'components/admin/banks-page';
+@import 'components/admin/users-page';
+@import 'components/admin/users-page-add-new-user-modal';
+@import 'components/admin/banks-page-add-new-bank-modal';
+@import 'components/admin/common';
+@import 'components/admin/edit-bank-modal';
+@import 'components/admin/edit-user-modal';
+
+

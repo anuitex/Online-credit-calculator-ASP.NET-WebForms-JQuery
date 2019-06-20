@@ -1,0 +1,257 @@
+﻿html, body {
+    min-height: 100%;
+    height: 100%;
+    /*background-image: url(http://theartmad.com/wp-content/uploads/Dark-Grey-Texture-Wallpaper-5.jpg);*/
+    background-size: cover;
+    background-position: top center;
+    font-family: helvetica neue, helvetica, arial, sans-serif;
+    font-weight: 200;
+
+    &.modal-active {
+        overflow: hidden;
+    }
+}
+
+#edit-bank-modal-container {
+    position: fixed;
+    display: table;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    transform: scale(0);
+    z-index: 9999;
+
+    &.one {
+        transform: scaleY(.01) scaleX(0);
+        animation: unfoldIn 1s cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards;
+
+        .modal-background {
+            .modal {
+                transform: scale(0);
+                animation: zoomIn .5s .8s cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards;
+            }
+        }
+
+        &.out {
+            transform: scale(1);
+            animation: unfoldOut 1s .3s cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards;
+
+            .modal-background {
+                .modal {
+                    animation: zoomOut .5s cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards;
+                }
+            }
+        }
+    }
+
+    .modal-background {
+        display: table-cell;
+        background: rgba(0,0,0,.8);
+        text-align: center;
+        vertical-align: middle;
+
+        .modal {
+            padding: 50px;
+            display: inline-block;
+            border-radius: 3px;
+            font-weight: 300;
+            position: relative;
+            max-height: 75% !important;
+
+            h2 {
+                font-size: 25px;
+                line-height: 25px;
+                margin-bottom: 15px;
+            }
+
+            p {
+                font-size: 18px;
+                line-height: 22px;
+            }
+
+            .modal-svg {
+                position: absolute;
+                top: 0;
+                left: 0;
+                height: 100%;
+                width: 100%;
+                border-radius: 3px;
+
+                rect {
+                    stroke: #fff;
+                    stroke-width: 2px;
+                    stroke-dasharray: 778;
+                    stroke-dashoffset: 778;
+                }
+            }
+        }
+    }
+}
+
+
+///Modal
+
+.admin-banks-main-wrapper {
+
+    select {
+        display: block;
+    }
+
+    .admin-add-new-bank-wrapper:hover {
+        cursor: default;
+    }
+
+    .admin-edit-bank-wrapper {
+        #edit-bank-modal-container {
+            .modal-background {
+                .modal {
+                    width: 550px;
+                    border-radius: 15px;
+                    -webkit-box-shadow: inset 0px 0px 9px 9px rgba(50,53,54,1);
+                    -moz-box-shadow: inset 0px 0px 9px 9px rgba(50,53,54,1);
+                    box-shadow: inset 0px 0px 9px 9px rgba(50,53,54,1);
+                    cursor: default;
+
+                    .edit-bank-title-wrapper {
+                        color: #1b7a80;
+                    }
+
+                    .edit-bank-info-wrapper {
+                        width: 100%;
+
+                        select {
+                            width: 60%;
+                            font-size: 15px;
+                        }
+
+                        label {
+                            font-size: 14px;
+                            color: black;
+                        }
+
+                        .input-field {
+                            display: flex;
+                            justify-content: flex-end;
+                        }
+
+                        .input-field-email {
+                            .helper-text {
+                                margin-left: 27px;
+                                margin-top: 5px;
+                            }
+                        }
+
+                        .user-email-wrapper {
+                            display: flex;
+                        }
+                    }
+
+                    .edit-bank-buttons-wrapper {
+                        display: flex;
+                        justify-content: space-around;
+                        margin-top: 30px;
+
+                        input {
+                            background: #00aab9;
+                            height: 30px;
+                            font-size: 15px;
+                            font-weight: bold;
+                            color: white;
+                            padding-right: 6px;
+                            padding-left: 6px;
+                            border-radius: 3px;
+                            border: none;
+                        }
+
+                        input:hover {
+                            -webkit-box-shadow: 0 3px 16px -2px #4caccf;
+                            -moz-box-shadow: 0 3px 16px -2px #4caccf;
+                            box-shadow: 0 3px 16px -2px #4caccf;
+                            transition: box-shadow 0.2s;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    #deleteBankModal {
+        width: 300px;
+        height: 134px;
+        margin-top: 0;
+
+        .card {
+            .modal-content-wrapper {
+                .modal-content {
+                    .modal-title-wrapper {
+                        display: flex;
+                        justify-content: center;
+                    }
+                }
+
+                .modal-footer {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+
+                    button {
+                        height: 26px;
+                        background: #00aab9;
+                        margin: 0 5px 0 5px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+
+/*@keyframes unfoldIn {
+    0% {
+        transform: scaleY(.005) scaleX(0);
+    }
+
+    50% {
+        transform: scaleY(.005) scaleX(1);
+    }
+
+    100% {
+        transform: scaleY(1) scaleX(1);
+    }
+}
+
+@keyframes unfoldOut {
+    0% {
+        transform: scaleY(1) scaleX(1);
+    }
+
+    50% {
+        transform: scaleY(.005) scaleX(1);
+    }
+
+    100% {
+        transform: scaleY(.005) scaleX(0);
+    }
+}
+
+@keyframes zoomIn {
+    0% {
+        transform: scale(0);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes zoomOut {
+    0% {
+        transform: scale(1);
+    }
+
+    100% {
+        transform: scale(0);
+    }
+}*/

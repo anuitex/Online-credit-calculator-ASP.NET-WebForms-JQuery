@@ -1,0 +1,17 @@
+﻿.user-body {
+    form {
+        .navbar.navbar-inverse.navbar-fixed-top {
+            padding-top:0;
+            padding-bottom:0;
+            z-index:9999;
+
+            .container.user-top-menu-container {
+                .navbar-collapse.collapse {
+                    .navbar-nav {
+                        flex-direction:unset !important;
+                    }
+                }
+            }
+        }
+    }
+}

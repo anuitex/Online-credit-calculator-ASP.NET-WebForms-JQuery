@@ -1,0 +1,102 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Bank.master.cs" Inherits="CreditCalculator.Web.Bank" %>
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head runat="server">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%: Page.Title %> Bank Page</title>
+
+    <asp:PlaceHolder runat="server">
+        <%: Scripts.Render("~/bundles/modernizr") %>
+    </asp:PlaceHolder>
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+
+    <webopt:BundleReference runat="server" Path="~/Content/css" />
+
+    <link href="Content/css/style.css" rel="stylesheet" />
+    <%--    <link href="Content/bootstrap.min.css" rel="stylesheet" />--%>
+    <link href="Content/css/bootstrap/bootstrap.min.css" rel="stylesheet" />
+
+    <link href="Content/css/font-awesome/all.min.css" rel="stylesheet" />
+    <link href="Content/css/DataTables/jquery.dataTables.min.css" rel="stylesheet" />
+    <link href="Content/css/DataTables/dataTables.bootstrap.min.css" rel="stylesheet" />
+
+    <%--///Animate menu--%>
+    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+
+    <link href="Content/css/materialBootstrap/bootstrap-material-design.min.css" rel="stylesheet" />
+</head>
+<body class="bank-admin-body">
+    <form runat="server">
+
+        <asp:ScriptManager runat="server">
+            <Scripts>
+                <asp:ScriptReference Name="MsAjaxBundle" />
+                <asp:ScriptReference Name="jquery" />
+                <asp:ScriptReference Name="bootstrap" />
+                <asp:ScriptReference Name="WebForms.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebForms.js" />
+                <asp:ScriptReference Name="WebUIValidation.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebUIValidation.js" />
+                <asp:ScriptReference Name="MenuStandards.js" Assembly="System.Web" Path="~/Scripts/WebForms/MenuStandards.js" />
+                <asp:ScriptReference Name="GridView.js" Assembly="System.Web" Path="~/Scripts/WebForms/GridView.js" />
+                <asp:ScriptReference Name="DetailsView.js" Assembly="System.Web" Path="~/Scripts/WebForms/DetailsView.js" />
+                <asp:ScriptReference Name="TreeView.js" Assembly="System.Web" Path="~/Scripts/WebForms/TreeView.js" />
+                <asp:ScriptReference Name="WebParts.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebParts.js" />
+                <asp:ScriptReference Name="Focus.js" Assembly="System.Web" Path="~/Scripts/WebForms/Focus.js" />
+                <asp:ScriptReference Name="WebFormsBundle" />
+            </Scripts>
+        </asp:ScriptManager>
+
+        <div class="navbar navbar-inverse navbar-fixed-top">
+            <div class="navbar-collapse collapse">
+                <asp:LoginView runat="server" ViewStateMode="Disabled">
+                    <AnonymousTemplate>
+                        <ul class="nav navbar-nav navbar-right">
+                            <li><a runat="server" href="~/Account/Register">Register</a></li>
+                            <li><a runat="server" href="~/Account/Login">Log in</a></li>
+                        </ul>
+                    </AnonymousTemplate>
+                    <LoggedInTemplate>
+                        <ul class="nav navbar-nav navbar-right">
+                            <li><a runat="server" href="~/Areas/Bank/Home"  title="Manage your account">Hello, <%: Context.User.Identity.GetUserName()  %> !</a></li>
+                            <li>
+                                <asp:LoginStatus runat="server" LogoutAction="Redirect" LogoutText="Log off" LogoutPageUrl="~/" OnLoggingOut="Unnamed_LoggingOut" />
+                            </li>
+                        </ul>
+                    </LoggedInTemplate>
+                </asp:LoginView>
+            </div>
+        </div>
+
+        <div class="bank-admin-content-wrapper">
+            <div class="navbar navbar-inverse navbar-fixed-left">
+                <div class="toggle">
+                    <ul class="toggle-menu">
+                        <li><a runat="server" href="~/Areas/Bank/Home">Home</a></li>
+                        <li><a runat="server" href="~/Areas/Bank/Services">Services</a></li>
+                        <li><a runat="server" href="~/Areas/Bank/Request">User Requests</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="container bank-body-content">
+                <asp:ContentPlaceHolder ID="BankContent" runat="server">
+                </asp:ContentPlaceHolder>
+            </div>
+
+        </div>
+    </form>
+    <script src='<%= ResolveUrl("~/Scripts/bootstrap.min.js") %>'></script>
+    <script src='<%= ResolveUrl("~/Scripts/jquery-3.3.1.min.js") %>'></script>
+    <script src='<%= ResolveUrl("~/Scripts/popper.js") %>'></script>
+    <script src='<%= ResolveUrl("~/Scripts/bootstrap-material-design.js") %>'></script>
+    <script src='<%= ResolveUrl("~/Scripts/bootstrap-material-design.js") %>'></script>
+    <script>$(document).ready(function () { $('body').bootstrapMaterialDesign(); });</script>
+    <script src='<%= ResolveUrl("~/Scripts/DataTables/jquery.dataTables.min.js") %>'></script>
+    <script src='<%= ResolveUrl("~/Scripts/Bank/main-menu.js") %>'></script>
+    <script src='<%= ResolveUrl("~/Scripts/Bank/creditTable.js") %>'></script>
+    <script src='<%= ResolveUrl("~/Scripts/Bank/depositTable.js") %>'></script>
+    <script src='<%= ResolveUrl("~/Scripts/materialize/materialize.min.js") %>'></script>
+</body>
+</html>

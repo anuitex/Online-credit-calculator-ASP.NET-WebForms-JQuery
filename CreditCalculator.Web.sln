@@ -1,0 +1,55 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.489
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CreditCalculator.Web", "CreditCalculator.Web\CreditCalculator.Web.csproj", "{2789DF18-DAFA-40DC-8763-0644F11EB3D4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CreditCalculator.Entity", "CreditCalculator.Entity\CreditCalculator.Entity.csproj", "{A77DCBE9-B914-4EC7-8765-CD1FD8F1EFE7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CreditCalculator.DAL", "DAL\CreditCalculator.DAL.csproj", "{90BFD291-4263-4E46-8311-E75F691BDB1E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CreditCalculator.Configurations", "CreditCalculator.Configurations\CreditCalculator.Configurations.csproj", "{B6A0A523-36B3-4719-9F96-DE39536ABDD2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CreditCalculator.Services", "CreditCalculator.Services\CreditCalculator.Services.csproj", "{2DDE0C3A-F90A-4076-A0FB-01053F082B0B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CreditCalculator.ViewModels", "CreditCalculator.ViewModels\CreditCalculator.ViewModels.csproj", "{83595361-4CA8-4756-B65D-E51186E58BAC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2789DF18-DAFA-40DC-8763-0644F11EB3D4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2789DF18-DAFA-40DC-8763-0644F11EB3D4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2789DF18-DAFA-40DC-8763-0644F11EB3D4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2789DF18-DAFA-40DC-8763-0644F11EB3D4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A77DCBE9-B914-4EC7-8765-CD1FD8F1EFE7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A77DCBE9-B914-4EC7-8765-CD1FD8F1EFE7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A77DCBE9-B914-4EC7-8765-CD1FD8F1EFE7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A77DCBE9-B914-4EC7-8765-CD1FD8F1EFE7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{90BFD291-4263-4E46-8311-E75F691BDB1E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{90BFD291-4263-4E46-8311-E75F691BDB1E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{90BFD291-4263-4E46-8311-E75F691BDB1E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{90BFD291-4263-4E46-8311-E75F691BDB1E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B6A0A523-36B3-4719-9F96-DE39536ABDD2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B6A0A523-36B3-4719-9F96-DE39536ABDD2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B6A0A523-36B3-4719-9F96-DE39536ABDD2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B6A0A523-36B3-4719-9F96-DE39536ABDD2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2DDE0C3A-F90A-4076-A0FB-01053F082B0B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2DDE0C3A-F90A-4076-A0FB-01053F082B0B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2DDE0C3A-F90A-4076-A0FB-01053F082B0B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2DDE0C3A-F90A-4076-A0FB-01053F082B0B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{83595361-4CA8-4756-B65D-E51186E58BAC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{83595361-4CA8-4756-B65D-E51186E58BAC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{83595361-4CA8-4756-B65D-E51186E58BAC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{83595361-4CA8-4756-B65D-E51186E58BAC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {45C67AA4-D815-464C-A0D6-33A7C157A6AA}
+	EndGlobalSection
+EndGlobal

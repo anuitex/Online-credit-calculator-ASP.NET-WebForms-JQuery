@@ -1,0 +1,584 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{90BFD291-4263-4E46-8311-E75F691BDB1E}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DAL</RootNamespace>
+    <AssemblyName>DAL</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Core, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.2.2\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.EntityFramework, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.EntityFramework.2.2.2\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Owin, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Owin.2.2.2\lib\net45\Microsoft.AspNet.Identity.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.3.0.1\lib\net45\Microsoft.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.3.0.1\lib\net45\Microsoft.Owin.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Cookies, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.Cookies.3.0.1\lib\net45\Microsoft.Owin.Security.Cookies.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.OAuth, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.OAuth.3.0.1\lib\net45\Microsoft.Owin.Security.OAuth.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Owin, Version=1.0.0.0, Culture=neutral, PublicKeyToken=f0ebd12fd5e55cc5, processorArchitecture=MSIL">
+      <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ApplicationDbContext.cs" />
+    <Compile Include="Identity\IdentityHelper.cs" />
+    <Compile Include="Migrations\201905171152121_InitialCreate.cs" />
+    <Compile Include="Migrations\201905171152121_InitialCreate.Designer.cs">
+      <DependentUpon>201905171152121_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201905171155340_chrefe.cs" />
+    <Compile Include="Migrations\201905171155340_chrefe.Designer.cs">
+      <DependentUpon>201905171155340_chrefe.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201905171200414_chrefeferg.cs" />
+    <Compile Include="Migrations\201905171200414_chrefeferg.Designer.cs">
+      <DependentUpon>201905171200414_chrefeferg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201905171204393_chrefefergvrehreh.cs" />
+    <Compile Include="Migrations\201905171204393_chrefefergvrehreh.Designer.cs">
+      <DependentUpon>201905171204393_chrefefergvrehreh.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201905171205079_chrefefergvrehrehjcmrge.cs" />
+    <Compile Include="Migrations\201905171205079_chrefefergvrehrehjcmrge.Designer.cs">
+      <DependentUpon>201905171205079_chrefefergvrehrehjcmrge.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201905171206120_kfmwepafr.cs" />
+    <Compile Include="Migrations\201905171206120_kfmwepafr.Designer.cs">
+      <DependentUpon>201905171206120_kfmwepafr.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201905171207030_krgergeh.cs" />
+    <Compile Include="Migrations\201905171207030_krgergeh.Designer.cs">
+      <DependentUpon>201905171207030_krgergeh.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201905171229379_frgsrwrt.cs" />
+    <Compile Include="Migrations\201905171229379_frgsrwrt.Designer.cs">
+      <DependentUpon>201905171229379_frgsrwrt.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201905171231070_ffhjygjj.cs" />
+    <Compile Include="Migrations\201905171231070_ffhjygjj.Designer.cs">
+      <DependentUpon>201905171231070_ffhjygjj.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201905171235309_ffhjddtttgrte.cs" />
+    <Compile Include="Migrations\201905171235309_ffhjddtttgrte.Designer.cs">
+      <DependentUpon>201905171235309_ffhjddtttgrte.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201905171323348_1.cs" />
+    <Compile Include="Migrations\201905171323348_1.Designer.cs">
+      <DependentUpon>201905171323348_1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201905171324324_2.cs" />
+    <Compile Include="Migrations\201905171324324_2.Designer.cs">
+      <DependentUpon>201905171324324_2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201905171329032_3.cs" />
+    <Compile Include="Migrations\201905171329032_3.Designer.cs">
+      <DependentUpon>201905171329032_3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201905171445204_4.cs" />
+    <Compile Include="Migrations\201905171445204_4.Designer.cs">
+      <DependentUpon>201905171445204_4.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201905200723051_addProperties.cs" />
+    <Compile Include="Migrations\201905200723051_addProperties.Designer.cs">
+      <DependentUpon>201905200723051_addProperties.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201905200809090_addProperties2.cs" />
+    <Compile Include="Migrations\201905200809090_addProperties2.Designer.cs">
+      <DependentUpon>201905200809090_addProperties2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201905200840211_addProperties3.cs" />
+    <Compile Include="Migrations\201905200840211_addProperties3.Designer.cs">
+      <DependentUpon>201905200840211_addProperties3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201905200851472_addProperties4.cs" />
+    <Compile Include="Migrations\201905200851472_addProperties4.Designer.cs">
+      <DependentUpon>201905200851472_addProperties4.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201905201313586_addProperties5.cs" />
+    <Compile Include="Migrations\201905201313586_addProperties5.Designer.cs">
+      <DependentUpon>201905201313586_addProperties5.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201905201548089_addProperties6.cs" />
+    <Compile Include="Migrations\201905201548089_addProperties6.Designer.cs">
+      <DependentUpon>201905201548089_addProperties6.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201905230700404_addProperties7.cs" />
+    <Compile Include="Migrations\201905230700404_addProperties7.Designer.cs">
+      <DependentUpon>201905230700404_addProperties7.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201905230901274_addProperties8.cs" />
+    <Compile Include="Migrations\201905230901274_addProperties8.Designer.cs">
+      <DependentUpon>201905230901274_addProperties8.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201905230902348_addProperties9.cs" />
+    <Compile Include="Migrations\201905230902348_addProperties9.Designer.cs">
+      <DependentUpon>201905230902348_addProperties9.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201905230946380_addProperties10.cs" />
+    <Compile Include="Migrations\201905230946380_addProperties10.Designer.cs">
+      <DependentUpon>201905230946380_addProperties10.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201905231005066_addProperties11.cs" />
+    <Compile Include="Migrations\201905231005066_addProperties11.Designer.cs">
+      <DependentUpon>201905231005066_addProperties11.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201905231006019_addProperties12.cs" />
+    <Compile Include="Migrations\201905231006019_addProperties12.Designer.cs">
+      <DependentUpon>201905231006019_addProperties12.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201905231147347_addProperties15.cs" />
+    <Compile Include="Migrations\201905231147347_addProperties15.Designer.cs">
+      <DependentUpon>201905231147347_addProperties15.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201905231249102_addProperties16.cs" />
+    <Compile Include="Migrations\201905231249102_addProperties16.Designer.cs">
+      <DependentUpon>201905231249102_addProperties16.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201905241349049_addProperties18.cs" />
+    <Compile Include="Migrations\201905241349049_addProperties18.Designer.cs">
+      <DependentUpon>201905241349049_addProperties18.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201905281432276_addProperties19.cs" />
+    <Compile Include="Migrations\201905281432276_addProperties19.Designer.cs">
+      <DependentUpon>201905281432276_addProperties19.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201905301225561_addProperties20.cs" />
+    <Compile Include="Migrations\201905301225561_addProperties20.Designer.cs">
+      <DependentUpon>201905301225561_addProperties20.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201905301229588_addProperties21.cs" />
+    <Compile Include="Migrations\201905301229588_addProperties21.Designer.cs">
+      <DependentUpon>201905301229588_addProperties21.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201905301231170_addProperties22.cs" />
+    <Compile Include="Migrations\201905301231170_addProperties22.Designer.cs">
+      <DependentUpon>201905301231170_addProperties22.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201905301232152_addProperties23.cs" />
+    <Compile Include="Migrations\201905301232152_addProperties23.Designer.cs">
+      <DependentUpon>201905301232152_addProperties23.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201905301232328_addProperties24.cs" />
+    <Compile Include="Migrations\201905301232328_addProperties24.Designer.cs">
+      <DependentUpon>201905301232328_addProperties24.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201905301239026_addProperties25.cs" />
+    <Compile Include="Migrations\201905301239026_addProperties25.Designer.cs">
+      <DependentUpon>201905301239026_addProperties25.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201905301239256_addProperties26.cs" />
+    <Compile Include="Migrations\201905301239256_addProperties26.Designer.cs">
+      <DependentUpon>201905301239256_addProperties26.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201905301529026_addProperties27.cs" />
+    <Compile Include="Migrations\201905301529026_addProperties27.Designer.cs">
+      <DependentUpon>201905301529026_addProperties27.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201905301537289_addProperties28.cs" />
+    <Compile Include="Migrations\201905301537289_addProperties28.Designer.cs">
+      <DependentUpon>201905301537289_addProperties28.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201905301537496_addProperties29.cs" />
+    <Compile Include="Migrations\201905301537496_addProperties29.Designer.cs">
+      <DependentUpon>201905301537496_addProperties29.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201905310846010_addProperty.cs" />
+    <Compile Include="Migrations\201905310846010_addProperty.Designer.cs">
+      <DependentUpon>201905310846010_addProperty.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201906031452556_addProperty28.cs" />
+    <Compile Include="Migrations\201906031452556_addProperty28.Designer.cs">
+      <DependentUpon>201906031452556_addProperty28.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201906041343480_test.cs" />
+    <Compile Include="Migrations\201906041343480_test.Designer.cs">
+      <DependentUpon>201906041343480_test.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201906041344349_test2.cs" />
+    <Compile Include="Migrations\201906041344349_test2.Designer.cs">
+      <DependentUpon>201906041344349_test2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201906041348585_test3.cs" />
+    <Compile Include="Migrations\201906041348585_test3.Designer.cs">
+      <DependentUpon>201906041348585_test3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201906041350470_test4.cs" />
+    <Compile Include="Migrations\201906041350470_test4.Designer.cs">
+      <DependentUpon>201906041350470_test4.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201906041354502_test5.cs" />
+    <Compile Include="Migrations\201906041354502_test5.Designer.cs">
+      <DependentUpon>201906041354502_test5.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201906041355133_test6.cs" />
+    <Compile Include="Migrations\201906041355133_test6.Designer.cs">
+      <DependentUpon>201906041355133_test6.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201906100635057_addProperties1.cs" />
+    <Compile Include="Migrations\201906100635057_addProperties1.Designer.cs">
+      <DependentUpon>201906100635057_addProperties1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201906100719598_addProperties210.cs" />
+    <Compile Include="Migrations\201906100719598_addProperties210.Designer.cs">
+      <DependentUpon>201906100719598_addProperties210.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201906101444176_addProperties31.cs" />
+    <Compile Include="Migrations\201906101444176_addProperties31.Designer.cs">
+      <DependentUpon>201906101444176_addProperties31.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201906101446063_addProperties41.cs" />
+    <Compile Include="Migrations\201906101446063_addProperties41.Designer.cs">
+      <DependentUpon>201906101446063_addProperties41.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201906101447213_addProperties51.cs" />
+    <Compile Include="Migrations\201906101447213_addProperties51.Designer.cs">
+      <DependentUpon>201906101447213_addProperties51.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201906101524360_addProperties61.cs" />
+    <Compile Include="Migrations\201906101524360_addProperties61.Designer.cs">
+      <DependentUpon>201906101524360_addProperties61.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201906101526373_addProperties71.cs" />
+    <Compile Include="Migrations\201906101526373_addProperties71.Designer.cs">
+      <DependentUpon>201906101526373_addProperties71.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201906111111436_addTable1.cs" />
+    <Compile Include="Migrations\201906111111436_addTable1.Designer.cs">
+      <DependentUpon>201906111111436_addTable1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201906111120041_addTable2.cs" />
+    <Compile Include="Migrations\201906111120041_addTable2.Designer.cs">
+      <DependentUpon>201906111120041_addTable2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201906131532597_addProp1.cs" />
+    <Compile Include="Migrations\201906131532597_addProp1.Designer.cs">
+      <DependentUpon>201906131532597_addProp1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201906140609581_addProp11.cs" />
+    <Compile Include="Migrations\201906140609581_addProp11.Designer.cs">
+      <DependentUpon>201906140609581_addProp11.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201906140615054_addProp12.cs" />
+    <Compile Include="Migrations\201906140615054_addProp12.Designer.cs">
+      <DependentUpon>201906140615054_addProp12.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201906140806426_addRole.cs" />
+    <Compile Include="Migrations\201906140806426_addRole.Designer.cs">
+      <DependentUpon>201906140806426_addRole.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201906140818040_addRole1.cs" />
+    <Compile Include="Migrations\201906140818040_addRole1.Designer.cs">
+      <DependentUpon>201906140818040_addRole1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201906141115294_addRole2.cs" />
+    <Compile Include="Migrations\201906141115294_addRole2.Designer.cs">
+      <DependentUpon>201906141115294_addRole2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201906141129276_addRole3.cs" />
+    <Compile Include="Migrations\201906141129276_addRole3.Designer.cs">
+      <DependentUpon>201906141129276_addRole3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201906141134564_addRole31.cs" />
+    <Compile Include="Migrations\201906141134564_addRole31.Designer.cs">
+      <DependentUpon>201906141134564_addRole31.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201906141443346_deleteTable.cs" />
+    <Compile Include="Migrations\201906141443346_deleteTable.Designer.cs">
+      <DependentUpon>201906141443346_deleteTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201906141453258_addDetails.cs" />
+    <Compile Include="Migrations\201906141453258_addDetails.Designer.cs">
+      <DependentUpon>201906141453258_addDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201906191059112_addPropRole.cs" />
+    <Compile Include="Migrations\201906191059112_addPropRole.Designer.cs">
+      <DependentUpon>201906191059112_addPropRole.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\AvailableBanksForUserRepository.cs" />
+    <Compile Include="Repositories\BankPropositionRepository.cs" />
+    <Compile Include="Repositories\BankRepository.cs" />
+    <Compile Include="Repositories\CreditRequestRepository.cs" />
+    <Compile Include="Repositories\DepositRequestRepository.cs" />
+    <Compile Include="Repositories\ServicesRepository.cs" />
+    <Compile Include="Repositories\UserRepository.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CreditCalculator.Entity\CreditCalculator.Entity.csproj">
+      <Project>{a77dcbe9-b914-4ec7-8765-cd1fd8f1efe7}</Project>
+      <Name>CreditCalculator.Entity</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CreditCalculator.ViewModels\CreditCalculator.ViewModels.csproj">
+      <Project>{83595361-4CA8-4756-B65D-E51186E58BAC}</Project>
+      <Name>CreditCalculator.ViewModels</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201905171152121_InitialCreate.resx">
+      <DependentUpon>201905171152121_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905171155340_chrefe.resx">
+      <DependentUpon>201905171155340_chrefe.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905171200414_chrefeferg.resx">
+      <DependentUpon>201905171200414_chrefeferg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905171204393_chrefefergvrehreh.resx">
+      <DependentUpon>201905171204393_chrefefergvrehreh.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905171205079_chrefefergvrehrehjcmrge.resx">
+      <DependentUpon>201905171205079_chrefefergvrehrehjcmrge.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905171206120_kfmwepafr.resx">
+      <DependentUpon>201905171206120_kfmwepafr.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905171207030_krgergeh.resx">
+      <DependentUpon>201905171207030_krgergeh.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905171229379_frgsrwrt.resx">
+      <DependentUpon>201905171229379_frgsrwrt.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905171231070_ffhjygjj.resx">
+      <DependentUpon>201905171231070_ffhjygjj.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905171235309_ffhjddtttgrte.resx">
+      <DependentUpon>201905171235309_ffhjddtttgrte.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905171323348_1.resx">
+      <DependentUpon>201905171323348_1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905171324324_2.resx">
+      <DependentUpon>201905171324324_2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905171329032_3.resx">
+      <DependentUpon>201905171329032_3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905171445204_4.resx">
+      <DependentUpon>201905171445204_4.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905200723051_addProperties.resx">
+      <DependentUpon>201905200723051_addProperties.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905200809090_addProperties2.resx">
+      <DependentUpon>201905200809090_addProperties2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905200840211_addProperties3.resx">
+      <DependentUpon>201905200840211_addProperties3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905200851472_addProperties4.resx">
+      <DependentUpon>201905200851472_addProperties4.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905201313586_addProperties5.resx">
+      <DependentUpon>201905201313586_addProperties5.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905201548089_addProperties6.resx">
+      <DependentUpon>201905201548089_addProperties6.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905230700404_addProperties7.resx">
+      <DependentUpon>201905230700404_addProperties7.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905230901274_addProperties8.resx">
+      <DependentUpon>201905230901274_addProperties8.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905230902348_addProperties9.resx">
+      <DependentUpon>201905230902348_addProperties9.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905230946380_addProperties10.resx">
+      <DependentUpon>201905230946380_addProperties10.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905231005066_addProperties11.resx">
+      <DependentUpon>201905231005066_addProperties11.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905231006019_addProperties12.resx">
+      <DependentUpon>201905231006019_addProperties12.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905231147347_addProperties15.resx">
+      <DependentUpon>201905231147347_addProperties15.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905231249102_addProperties16.resx">
+      <DependentUpon>201905231249102_addProperties16.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905241349049_addProperties18.resx">
+      <DependentUpon>201905241349049_addProperties18.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905281432276_addProperties19.resx">
+      <DependentUpon>201905281432276_addProperties19.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905301225561_addProperties20.resx">
+      <DependentUpon>201905301225561_addProperties20.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905301229588_addProperties21.resx">
+      <DependentUpon>201905301229588_addProperties21.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905301231170_addProperties22.resx">
+      <DependentUpon>201905301231170_addProperties22.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905301232152_addProperties23.resx">
+      <DependentUpon>201905301232152_addProperties23.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905301232328_addProperties24.resx">
+      <DependentUpon>201905301232328_addProperties24.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905301239026_addProperties25.resx">
+      <DependentUpon>201905301239026_addProperties25.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905301239256_addProperties26.resx">
+      <DependentUpon>201905301239256_addProperties26.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905301529026_addProperties27.resx">
+      <DependentUpon>201905301529026_addProperties27.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905301537289_addProperties28.resx">
+      <DependentUpon>201905301537289_addProperties28.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905301537496_addProperties29.resx">
+      <DependentUpon>201905301537496_addProperties29.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905310846010_addProperty.resx">
+      <DependentUpon>201905310846010_addProperty.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201906031452556_addProperty28.resx">
+      <DependentUpon>201906031452556_addProperty28.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201906041343480_test.resx">
+      <DependentUpon>201906041343480_test.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201906041344349_test2.resx">
+      <DependentUpon>201906041344349_test2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201906041348585_test3.resx">
+      <DependentUpon>201906041348585_test3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201906041350470_test4.resx">
+      <DependentUpon>201906041350470_test4.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201906041354502_test5.resx">
+      <DependentUpon>201906041354502_test5.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201906041355133_test6.resx">
+      <DependentUpon>201906041355133_test6.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201906100635057_addProperties1.resx">
+      <DependentUpon>201906100635057_addProperties1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201906100719598_addProperties210.resx">
+      <DependentUpon>201906100719598_addProperties210.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201906101444176_addProperties31.resx">
+      <DependentUpon>201906101444176_addProperties31.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201906101446063_addProperties41.resx">
+      <DependentUpon>201906101446063_addProperties41.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201906101447213_addProperties51.resx">
+      <DependentUpon>201906101447213_addProperties51.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201906101524360_addProperties61.resx">
+      <DependentUpon>201906101524360_addProperties61.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201906101526373_addProperties71.resx">
+      <DependentUpon>201906101526373_addProperties71.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201906111111436_addTable1.resx">
+      <DependentUpon>201906111111436_addTable1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201906111120041_addTable2.resx">
+      <DependentUpon>201906111120041_addTable2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201906131532597_addProp1.resx">
+      <DependentUpon>201906131532597_addProp1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201906140609581_addProp11.resx">
+      <DependentUpon>201906140609581_addProp11.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201906140615054_addProp12.resx">
+      <DependentUpon>201906140615054_addProp12.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201906140806426_addRole.resx">
+      <DependentUpon>201906140806426_addRole.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201906140818040_addRole1.resx">
+      <DependentUpon>201906140818040_addRole1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201906141115294_addRole2.resx">
+      <DependentUpon>201906141115294_addRole2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201906141129276_addRole3.resx">
+      <DependentUpon>201906141129276_addRole3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201906141134564_addRole31.resx">
+      <DependentUpon>201906141134564_addRole31.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201906141443346_deleteTable.resx">
+      <DependentUpon>201906141443346_deleteTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201906141453258_addDetails.resx">
+      <DependentUpon>201906141453258_addDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201906191059112_addPropRole.resx">
+      <DependentUpon>201906191059112_addPropRole.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
